@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { HomeWrapper } from "./Home";
 
 
-// stworzyć nowy element z img span, tak aby nie powtarzac kodu.
 
 const Shortcuts = styled.div`
 background-color: #707070;
@@ -13,7 +12,7 @@ const Carousel = styled.div`
 height: 200px;
 
 `
-
+// problem with movie props, returned undefined ("error")
 export const SearchEngine = (props) => {
     return (
         < HomeWrapper >
