@@ -7,7 +7,7 @@ import { SearchEngine } from './Main/SearchEngine';
 
 function App() {
   return (
-    <SearchEngine></SearchEngine>
+    <Home></Home>
   )
 }
 

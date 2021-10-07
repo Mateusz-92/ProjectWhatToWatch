@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { blinkingLight } from "./blinkingLight";
+import { randomTimeLine } from "./blinkingLight";
 
 export const HomeWrapper = styled.div`
   background-color: #f8c317;
@@ -19,12 +20,12 @@ color:  #f8c317;
 const Image = styled.img`
 position: relative;
 bottom: 15vh;
-animation: ${blinkingLight} 1.5s linear infinite;
+animation: ${blinkingLight} ${randomTimeLine}s linear infinite;
 color: red;
 
 
 `
-
+console.log({ randomTimeLine })
 export const Home = (props) => {
     return (
         <HomeWrapper>
