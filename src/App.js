@@ -1,13 +1,13 @@
 
 import { Home } from './Main/Home';
 import "./App.css";
-import { SearchEngine } from './Main/SearchEngine';
+import { SearchEngine } from './Main/Revolver';
 
 
 
 function App() {
   return (
-    <SearchEngine></SearchEngine>
+    <Home></Home>
   )
 }
 
