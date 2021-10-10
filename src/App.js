@@ -1,13 +1,16 @@
 
 import { Home } from './Main/Home';
 import "./App.css";
-import { SearchEngine } from './Main/Revolver';
+import { Revolver } from './Main/Revolver';
+import Carousel from './Main/Carousel';
 
 
 
 function App() {
   return (
-    <Home></Home>
+    <>
+      <Revolver></Revolver>
+    </>
   )
 }
 

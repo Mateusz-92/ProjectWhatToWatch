@@ -19,7 +19,7 @@ color:  #f8c317;
 const Image = styled.img`
 position: relative;
 bottom: 15vh;
-animation: ${blinkingLight} 1.5s linear infinite;
+animation: ${blinkingLight} 2s linear infinite;
 color: red;
 
 
