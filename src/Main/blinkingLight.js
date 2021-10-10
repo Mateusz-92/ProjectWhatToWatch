@@ -4,14 +4,17 @@ import { keyframes } from "styled-components";
 
 export const blinkingLight = () => {
   return keyframes`
-      50%{
-        opacity:0.2;
+      15%{
+        opacity:0.6;
       }
-      70%{
+      30%{
         opacity:1;
       }
-      90%{
-        opacity:0.4;
+      40%{
+        opacity:0.6;
+      }
+      45%{
+        opacity:1;
       }
     `;
 }
