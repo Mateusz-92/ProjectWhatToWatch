@@ -7,6 +7,14 @@ export const HomeWrapper = styled.div`
   width: 430px;
   height: 950px;
   color: #707070;
+
+  h2 {
+    text-align: center;
+  }
+ body {
+     background-color: black;
+ }
+ 
 `;
 
 const ButtonWrapper = styled.button`
@@ -15,14 +23,18 @@ height: 88px;
 border-radius: 5px;
 background-color: #707070;
 color:  #f8c317;
+margin: 20px 0 0 20px;
 `
 const Image = styled.img`
 position: relative;
-bottom: 15vh;
+bottom: 100px ;
 animation: ${blinkingLight} 1.5s linear infinite;
 color: red;
-
-
+margin-left: 20px;
+`
+const ImageContent = styled.div`
+margin-top: 100px;
+margin-left: 20px;
 `
 
 export const Home = (props) => {
@@ -32,10 +44,10 @@ export const Home = (props) => {
             <span>WHAT TO WHATCH</span>
             <h2>Lubisz stare filmy? Podpowiemy Ci który obejrzeć </h2>
             <ButtonWrapper>Button</ButtonWrapper>
-            <div>
+            <ImageContent>
                 <img src="/images/camera.png" />
                 <Image src="images/light.png" />
-            </div>
+            </ImageContent>
         </HomeWrapper>
     );
 };
