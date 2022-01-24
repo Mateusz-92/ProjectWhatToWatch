@@ -10,7 +10,6 @@ const TypeOfSearch = styled.div`
   overflow: hidden;
    padding-top: 1em; 
    padding-bottom: 2em;
-   /* border: 2px solid green; */
    height : 100%;
 `
 
@@ -20,13 +19,11 @@ const ButtonLeft = styled.button`
   border-top: 45px solid transparent;
   border-bottom: 30px solid transparent;
   border-right: 45px solid #3e3134;
-  margin: 45px auto 0;
   position: absolute;
-  bottom: 130px;
-  left: 0px;
+  top: 50%;
+  transform: translateY(-50%);
   background-color: #ffd756;
   border-left: #ffd756;
-  display: none;
 `;
 const ButtonRight = styled.button`
   width: 0;
@@ -34,49 +31,43 @@ const ButtonRight = styled.button`
   border-top: 45px solid transparent;
   border-bottom: 30px solid transparent;
   border-left: 45px solid #3e3134;
-  margin: 45px auto 0;
   position: absolute;
-  bottom: 130px;
+  top: 50%;
+  transform: translateY(-50%);
   right: 0px;
   background-color: #ffd756;
   border-right: #ffd756;
-  display: none;
+
 `;
 const ActuallType = styled.div`
   /* width: 15rem;
   height: 16rem; */
-  width: 50%;
+  width: 70%;
   height: 75%;
   background-color: #ffd756;
   position: relative;
   left: 50%;
-  transform: translateX(-50%);
-  /* border: 2px solid blue; */
+  transform: translateX(-50%) ;
+;  /* border: 2px solid blue; */
   
 
-  &:hover ${ButtonLeft} {
-    display: block;
-  }
-  &:hover ${ButtonRight} {
-    display: block;
-  }
+
   .picture {
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 2.5rem;
+    top: 0;
+    bottom:0;
+    right:0;
+    left: 0;
     max-width: 100%;
-    max-height: 100%;
-    margin-bottom: 5px;
+    max-height: 60%;
+    margin: auto auto;
   }
 
   span {
-     /* display: inline-block; */
     position: absolute;
     bottom: 0;
-    left: 4rem;
-    width: 7rem;
-    height: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
     /* border: solid white 2px; */
     justify-content: flex-end;
@@ -84,7 +75,11 @@ const ActuallType = styled.div`
   .links{
     text-decoration: none;
     color: black;
-    /* text-transform: uppercase; */
+    text-transform: uppercase;
+    font-size: larger;
+    font-weight: 800;
+    color: #3E3134;
+    
   }
 `;
 export const Carousel = (props) => {

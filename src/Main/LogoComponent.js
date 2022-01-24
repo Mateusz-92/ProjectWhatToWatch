@@ -11,6 +11,7 @@ export const LogoComponent = () => {
         position: absolute;
         top: 1px;
         font-weight: 700;
+        font-size: small;
     }
     img {
         margin-top: 5px;

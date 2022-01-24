@@ -13,8 +13,9 @@ height: 5rem;
 width: 100%;
 display: flex;
 justify-content: space-evenly;
-align-self: flex-end;
-margin-top: 2em;
+position: absolute;
+bottom: 0px;
+margin-top: 0.5em;
 
 
         
@@ -46,6 +47,8 @@ const ListButton = styled.button`
 const QuestionHeader = styled.h2`
 text-align: center;
 color: #3E3134;
+margin-top: 1em;
+margin-bottom: 1em;
 `
 const linkStyle = {
     display: "flex",
@@ -53,9 +56,10 @@ const linkStyle = {
 const RevolverWrapper = styled(HomeWrapper)`
 display : flex;
 flex-direction: column;
-/* height: 650px 100%; */
-/* border : 2px solid black; */
-/* margin: 0 auto; */
+height : 100vh;
+`
+const HeaderWrapper = styled.div`
+ position: relative;
 `
 
 export const Revolver
@@ -63,7 +67,9 @@ export const Revolver
         return (
             <div>
                 <RevolverWrapper>
-                    <LogoComponent></LogoComponent>
+                    <HeaderWrapper>
+                        <LogoComponent></LogoComponent>
+                    </HeaderWrapper>
                     <ListButton ><img src="/images/list.png" /></ListButton>
                     <QuestionHeader>Według jakiej  <br></br> kategorii szukasz <br></br> filmu?</QuestionHeader>
                     <QuestionMark src="/images/question_mark.png" />

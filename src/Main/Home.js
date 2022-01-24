@@ -7,14 +7,10 @@ import { LogoComponent } from "./LogoComponent";
 
 export const HomeWrapper = styled.div`
   background-color: #f8c317;
-  width: 30rem;
   color: #3E3134;
   position: relative;
   box-sizing: border-box;
-   height: 100vh; // problem z długością 
-   
- 
-  
+  height: 100vh;
   h2 {
     text-align: center;
   }
@@ -35,19 +31,14 @@ const ButtonWrapper = styled.button`
     margin: 1em 0em 1em;
 `
 const Image = styled.img`
-  position: absolute;
-  top: 1rem;
-  left: 16rem;
   animation: ${blinkingLight} 1.5s linear infinite;
-  color: red;
-  max-width: 8rem;
+  max-width: 90%;
 
 `
 const ImageContent = styled.div`
-margin-top: 1rem;
-  position: relative;
   box-sizing: border-box;
   margin-left: 1em;
+  width: 100%;
   
 
 
@@ -55,8 +46,20 @@ margin-top: 1rem;
     width: 15rem;
   }
   .camera {
-    max-width: 100%;
+    max-width: 90%;
   }
+  .lightWrapper{
+    width: 40%;
+  }
+`
+const CameraWrapper = styled.div`
+    width: 60%;
+    float: left;
+    margin-left: 5px;
+`
+const LightWrapper = styled.div`
+ width: 35%;
+ float: left;
 `
 
 
@@ -73,8 +76,12 @@ export const Home = (props) => {
       </Link>
       <Outlet />
       <ImageContent>
-        <img className="camera" src="/images/camera.png" />
-        <Image src="images/light.png" />
+        <CameraWrapper>
+          <img className="camera" src="/images/camera.png" />
+        </CameraWrapper>
+        <LightWrapper>
+          <Image src="images/light.png" />
+        </LightWrapper>
       </ImageContent>
     </HomeWrapper>
   );

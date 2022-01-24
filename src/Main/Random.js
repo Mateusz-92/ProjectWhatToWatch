@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { HomeWrapper } from "./Home";
 import { Link } from "react-router-dom"
 import styled from "styled-components";
+import { fetchRandomMovie } from "../Api/Movies"
 
 const MovieWrapper = styled.div`
 width: 90%;
@@ -41,7 +42,7 @@ height: 100px;
 left: 140px;
 `
 const BackWrapper = styled.div`
-width:  100px;
+/* width:  100px; */
 margin-left: 10px;
 
 button {
@@ -54,36 +55,58 @@ button :hover{
 span {
     margin-left: 3px;
     font-weight: 900;
+    
 }
+.backLink{
+    text-decoration: none;
+    color: #3E3134;
+
+}
+
 `
 
 
 
 export const Random = () => {
-    const APIurl = 'https://wtwapi.azurewebsites.net/api/movies/random';
+    const [loading, setLoading] = useState(true);
+
     const [movie, setMovie] = useState({});
     useEffect(() => {
-        fetch(APIurl)
-            .then(res => res.json())
+        setLoading();
+        fetchRandomMovie()
             .then(data => setMovie(data));
+
+
+
     }, []);
     return (
         <HomeWrapper>
             <BackWrapper>
-                <Link to="/revolver">
+                <Link className="backLink" to="/revolver">
                     <button><img src="/images/back_icon.png"></img></button>
+                    <span>BACK</span>
                 </Link>
-                <span>BACK</span>
-            </BackWrapper>
-            <MovieWrapper>
-                <img src={movie.thumbnail}></img>
-                <MovieHeaders>
-                    <h1>{movie.title}</h1>
-                    <h3>{movie.year}</h3>
-                    <p>{movie.description}</p>
-                </MovieHeaders>
 
+            </BackWrapper>
+
+
+            <MovieWrapper>
+
+                {/* SPiNER !!! */}
+                {loading ? <span>loading</span> :
+                    <>
+                        <img src={movie.thumbnail}></img>
+                        <MovieHeaders>
+                            <h1>{movie.title}</h1>
+                            <h3>{movie.year}</h3>
+                            <p>{movie.description}</p>
+                        </MovieHeaders>
+                    </>
+                }
             </MovieWrapper>
+
+
+
         </HomeWrapper>
 
     )
