@@ -1,48 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { HomeWrapper } from "./Home";
+import { HomeWrapper } from "./Home"
 import { Link } from "react-router-dom"
 import styled from "styled-components";
-import { fetchRandomMovie } from "../Api/Movies"
+import { RandomMovie } from "./RandomMovie";
 
-const MovieWrapper = styled.div`
-width: 90%;
-height: 12.5em;
-background-color: #FFD756;
-left: 1em;
-top: 1em;
-position: relative;
-box-sizing: border-box;
 
-img {
-    max-height: 90%;
-    position: absolute;
-    top: 10px;
-}
-h1 {
-    font-size: 24px;
-    font-weight: 900;
-    margin-bottom: 2px;
-    
-}
-h3 {
-    font-size: 16px;
-    color: #AE8A14;
-    font-weight: 900; 
-    margin-top: 2px;
- }
-p {
-    overflow: hidden;
-}
 
-`
-const MovieHeaders = styled.div`
-position: absolute;
-max-width: 100%;
-height: 100px;
-left: 140px;
-`
 const BackWrapper = styled.div`
-/* width:  100px; */
 margin-left: 10px;
 
 button {
@@ -53,7 +16,6 @@ button :hover{
     background-color:  #FFD756;
 }
 span {
-    margin-left: 3px;
     font-weight: 900;
     
 }
@@ -62,23 +24,43 @@ span {
     color: #3E3134;
 
 }
+p{
+   text-overflow: ellipsis;
+}
 
 `
+const RandomHeader = styled.div`
+ height: 20%;
+ margin-bottom: 2%;
+ margin-top: 2%;
+ position: relative;
 
-
+ .bcg_img{
+     max-height: 90%;
+     position: absolute;
+     right: 2px;
+     bottom: 1px;
+     opacity: 80%;
+ }
+ span{
+     font-size: large;
+     color: #332525;
+    font-weight: 500;
+ }
+ .list_wrapper{
+     position: absolute;
+     bottom: 1px;
+ }
+ .line{
+     margin-right: 5px;
+ }
+ h1 {
+     margin-left: 10px;
+     font-size: 50px;   
+ }
+`
 
 export const Random = () => {
-    const [loading, setLoading] = useState(true);
-
-    const [movie, setMovie] = useState({});
-    useEffect(() => {
-        setLoading();
-        fetchRandomMovie()
-            .then(data => setMovie(data));
-
-
-
-    }, []);
     return (
         <HomeWrapper>
             <BackWrapper>
@@ -86,27 +68,18 @@ export const Random = () => {
                     <button><img src="/images/back_icon.png"></img></button>
                     <span>BACK</span>
                 </Link>
-
             </BackWrapper>
-
-
-            <MovieWrapper>
-
-                {/* SPiNER !!! */}
-                {loading ? <span>loading</span> :
-                    <>
-                        <img src={movie.thumbnail}></img>
-                        <MovieHeaders>
-                            <h1>{movie.title}</h1>
-                            <h3>{movie.year}</h3>
-                            <p>{movie.description}</p>
-                        </MovieHeaders>
-                    </>
-                }
-            </MovieWrapper>
-
-
-
+            <RandomHeader>
+                <h1>Losowo</h1>
+                <img className="bcg_img" src="/images/bcg_random.png" ></img>
+                <div className="list_wrapper">
+                    <img className="line" src="/images/line.png"></img>
+                    <span>Aktualna Lista</span>
+                </div>
+            </RandomHeader>
+            <RandomMovie></RandomMovie>
+            <RandomMovie></RandomMovie>
+            <RandomMovie></RandomMovie>
         </HomeWrapper>
 
     )

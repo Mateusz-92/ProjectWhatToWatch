@@ -11,6 +11,7 @@ export const HomeWrapper = styled.div`
   position: relative;
   box-sizing: border-box;
   height: 100vh;
+  max-width: 500px;
   h2 {
     text-align: center;
   }

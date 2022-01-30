@@ -17,7 +17,7 @@ import { Home } from "./Main/Home";
 import { TypeOfFilm } from "./Main/TypeOfFilm";
 import { YearOfProduction } from "./Main/YearOfProduction";
 import { Recommended } from "./Main/Recommended"
-import { Random } from './Main/Random';
+import { Random } from "./Main/Random"
 
 const rootElement = document.getElementById("root");
 render(
