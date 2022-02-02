@@ -43,9 +43,9 @@ const ImageContent = styled.div`
   
 
 
-  img {
+  /* img {
     width: 15rem;
-  }
+  } */
   .camera {
     max-width: 90%;
   }

@@ -10,6 +10,8 @@ position: relative;
 overflow: hidden;
 text-overflow: ellipsis;
 margin-bottom: 5%;
+margin-left: 2.5%;
+margin-right: 2.5%;
 img {
     max-width: 100%;
     max-height:100%;
