@@ -1,8 +1,50 @@
 import React from "react";
+import { MovieFilter } from "./MovieFilter";
+import { getMovieByTag } from "../Api/Movies";
+
 export const TypeOfFilm = () => {
 
-    return (
+    const dataList = [{
+        name: "dramat",
+        queryValue: "dramat"
 
-        <h1>Type Of Film</h1>
+    },
+    {
+        name: "komedia",
+        queryValue: "komedia"
+
+    },
+    {
+        name: "horror",
+        queryValue: "horror"
+
+    },
+    {
+        name: "sensacyjny",
+        queryValue: "sensacyjny"
+
+    }, {
+        name: "psychologiczny",
+        queryValue: "psychologiczny"
+
+    },
+    {
+        name: "kryminał",
+        queryValue: "kryminał"
+
+    },
+    {
+        name: "romans",
+        queryValue: "romans"
+
+    }
+    ]
+
+    return (
+        <MovieFilter
+            dataList={dataList}
+            handler={getMovieByTag}
+            movieFilterHeader={'Gatunek'}
+        ></MovieFilter>
     )
 }

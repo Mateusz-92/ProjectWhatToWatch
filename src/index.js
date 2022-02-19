@@ -15,9 +15,10 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Revolver } from "./Main/Revolver";
 import { Home } from "./Main/Home";
 import { TypeOfFilm } from "./Main/TypeOfFilm";
-import { YearOfProduction } from "./Main/YearOfProduction";
+import { YearOfProductions } from "./Main/YearOfProductions";
 import { Recommended } from "./Main/Recommended"
 import { Random } from "./Main/Random"
+import { Movie } from "./Main/Movie"
 
 const rootElement = document.getElementById("root");
 render(
@@ -26,10 +27,10 @@ render(
       <Route path="/" element={<Home />} />
       <Route path="revolver" element={<Revolver />} />
       <Route path="revolver/Gatunek" element={<TypeOfFilm />} />
-      <Route path="revolver/Rok%20produkcji" element={<YearOfProduction />} />
+      <Route path="revolver/Rok%20produkcji" element={<YearOfProductions />} />
       <Route path="revolver/Polecane" element={<Recommended />} />
       <Route path="revolver/Losowy" element={<Random />} />
-
+      <Route exact path="/movie/:id" component={Movie} />
 
     </Routes>
   </BrowserRouter>,

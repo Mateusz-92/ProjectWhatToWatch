@@ -1,7 +1,6 @@
 import { HomeWrapper } from "./Home"
 import { RandomMovie } from "./RandomMovie";
 import { BackButton } from "./BackButton";
-import { Link } from "react-router-dom"
 import styled from "styled-components";
 
 const RandomHeader = styled.div`

@@ -23,11 +23,12 @@ export const fetchListMovie = () => {
 }
 
 export const getMovieByTag = tag => {
-    return api.get('movie', {
-        tag
-    })
-}
+    return api.get(`movie/tag/${tag}`);
+};
 
-export const getMovieByDecade = (decade) => {
-    return api.get(`movie/years/${decade}`)
+export const getMovieByDecade = decade => {
+    return api.get(`movie/years/${decade}`);
+};
+export const getMovieById = id => {
+    return api.get(`movie/id/${id}`)
 }
