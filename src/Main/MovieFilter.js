@@ -15,18 +15,21 @@ const MovieFilterHeader = styled.div`
      right: 2px;
      top: 0px;
      max-width: 80%;
-     opacity: 50%;
+     opacity: 90%;
  }
+
+ .type_of_filter{
+    margin-top: 0.5rem;
+    margin-left: 2.5%;
+    }
 `
 const MovieFilterWrapper = styled.div`
-
-margin-right: 2.5%; */
-
+margin-top: 5rem;
 
 
-.type_of_filter{
-    margin-top: 0.5rem;
-    }
+
+
+
 
 .filter_elements{
     font-size: x-large;
@@ -64,7 +67,7 @@ padding-bottom: 2px;
     text-decoration: none;
     color: black;
     font-size: larger;
-    font-weight: 800;
+    font-weight: 600;
     color: #3E3134;
     
   }
@@ -72,7 +75,7 @@ padding-bottom: 2px;
 
 .cover {
     width: 90%;
-    height: 75%;
+    height: 60%;
     
     /* float: left; */
 }

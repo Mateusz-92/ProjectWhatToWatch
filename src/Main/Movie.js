@@ -7,6 +7,7 @@ export const Movie = (props) => {
     const [movie, setMovie] = useState([])
     const MovieId = () => {
         getMovieById(`${this.props.match.params.movie.id}`).then(data => setMovie(data))
+        console.log(getMovieById(`${this.props.match.params.movie.id}`))
     }
 
     return (

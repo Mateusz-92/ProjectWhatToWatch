@@ -7,11 +7,16 @@ height: 25%;
 background-color: #FFD756;
 box-sizing: border-box;
 position: relative;
-overflow: hidden;
+overflow: auto;
 text-overflow: ellipsis;
 margin-bottom: 5%;
 margin-left: 2.5%;
 margin-right: 2.5%;
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
 img {
     max-width: 100%;
     max-height:100%;
@@ -30,7 +35,7 @@ h3 {
     margin-top: 2px;
  }
 p {
-    text-overflow: ellipsis;
+    
 }
 .img_wrapper{
     width: 35%;

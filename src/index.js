@@ -30,7 +30,6 @@ render(
       <Route path="revolver/Rok%20produkcji" element={<YearOfProductions />} />
       <Route path="revolver/Polecane" element={<Recommended />} />
       <Route path="revolver/Losowy" element={<Random />} />
-      <Route exact path="/movie/:id" component={Movie} />
 
     </Routes>
   </BrowserRouter>,

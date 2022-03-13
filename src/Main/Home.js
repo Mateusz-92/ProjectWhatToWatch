@@ -11,9 +11,10 @@ export const HomeWrapper = styled.div`
   position: relative;
   box-sizing: border-box;
   height: 100vh;
-  max-width: 500px;
+  /* max-width: 500px; */
   h2 {
     text-align: center;
+    margin-left: 2.5%;
   }
   
 `;
@@ -40,6 +41,8 @@ const ImageContent = styled.div`
   box-sizing: border-box;
   margin-left: 1em;
   width: 100%;
+  display: flex;
+  justify-content: center;
   
 
 
@@ -54,12 +57,12 @@ const ImageContent = styled.div`
   }
 `
 const CameraWrapper = styled.div`
-    width: 60%;
+    
     float: left;
     margin-left: 5px;
 `
 const LightWrapper = styled.div`
- width: 35%;
+ /* width: 35%; */
  float: left;
 `
 

@@ -8,8 +8,7 @@ const TypeOfSearch = styled.div`
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
-   padding-top: 1em; 
-   padding-bottom: 2em;
+  margin-bottom:3rem;
    height : 100%;
 `
 
@@ -59,7 +58,7 @@ const ActuallType = styled.div`
     right:0;
     left: 0;
     max-width: 100%;
-    max-height: 60%;
+    max-height: 50%;
     margin: auto auto;
   }
 
