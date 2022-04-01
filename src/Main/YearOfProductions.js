@@ -57,6 +57,7 @@ export const YearOfProductions = () => {
             handler={getMovieByDecade}
             movieFilterHeader={'Lata Produkcji'}
             typeOfFilter={'XX i XXI'}
+            backImage={"/images/clock.png"}
         ></MovieFilter>
     );
 }

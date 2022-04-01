@@ -2,7 +2,7 @@ import React from "react";
 import { MovieFilter } from "./MovieFilter";
 import { getMovieByTag } from "../Api/Movies";
 
-export const TypeOfFilm = () => {
+export const Genre = () => {
 
     const dataList = [{
         name: "dramat",
@@ -45,6 +45,7 @@ export const TypeOfFilm = () => {
             dataList={dataList}
             handler={getMovieByTag}
             movieFilterHeader={'Gatunek'}
+            backImage={"/images/genre2.png"}
         ></MovieFilter>
     )
 }

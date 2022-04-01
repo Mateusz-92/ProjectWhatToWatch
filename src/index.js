@@ -12,24 +12,36 @@ import reportWebVitals from './reportWebVitals';
 // ); // powyzej bez routingu
 import { render } from "react-dom";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Revolver } from "./Main/Revolver";
+import { MoviesCategory } from "./Main/MoviesCategory";
 import { Home } from "./Main/Home";
-import { TypeOfFilm } from "./Main/TypeOfFilm";
+import { Genre } from "./Main/Genre";
 import { YearOfProductions } from "./Main/YearOfProductions";
 import { Recommended } from "./Main/Recommended"
 import { Random } from "./Main/Random"
 import { Movie } from "./Main/Movie"
+import { Rank } from "./Main/Rank"
+import { InterestingMoviesFacts } from './Main/InterestingMoviesFacts';
 
 const rootElement = document.getElementById("root");
 render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="revolver" element={<Revolver />} />
-      <Route path="revolver/Gatunek" element={<TypeOfFilm />} />
-      <Route path="revolver/Rok%20produkcji" element={<YearOfProductions />} />
-      <Route path="revolver/Polecane" element={<Recommended />} />
-      <Route path="revolver/Losowy" element={<Random />} />
+      <Route path="start" element={<MoviesCategory />} />
+      <Route path="start/Genre" element={<Genre />} />
+      <Route path="start/YearOfProduction" element={<YearOfProductions />} />
+      <Route path="start/Recommended" element={<Recommended />} />
+      <Route path="start/Random" element={<Random />} />
+      <Route path="start/Genre/:id" element={<Movie />} />
+      <Route path="start/YearOfProduction/:id" element={<Movie />} />
+      <Route path="start/Rank" element={<Rank />} />
+      <Route path="start/Rank/:id" element={<Movie />} />
+      <Route path="start/Recommended/:id" element={<Movie />} />
+      <Route path="/start/Recommended/" element={<Recommended />} />
+      <Route path="/Interesting_facts" element={<InterestingMoviesFacts />} />
+
+
+
 
     </Routes>
   </BrowserRouter>,

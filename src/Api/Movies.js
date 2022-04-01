@@ -30,5 +30,5 @@ export const getMovieByDecade = decade => {
     return api.get(`movie/years/${decade}`);
 };
 export const getMovieById = id => {
-    return api.get(`movie/id/${id}`)
+    return api.get(`movie/${id}`);
 }

@@ -7,35 +7,42 @@ height: 25%;
 background-color: #FFD756;
 box-sizing: border-box;
 position: relative;
-overflow: auto;
 text-overflow: ellipsis;
 margin-bottom: 5%;
 margin-left: 2.5%;
 margin-right: 2.5%;
 
-::-webkit-scrollbar { 
-    display: none; 
+@media  (min-width:768px) {
+    height: 55%;
+    margin-bottom:2% ;
 }
 
 img {
     max-width: 100%;
     max-height:100%;
     
+    @media  (min-width:768px){
+        width:90%;
+        height:95%;
+    }
 }
 h1 {
-    font-size: 24px;
+    font-size: medium;
     font-weight: 900;
     margin-bottom: 2px;
+    @media  (min-width:768px){
+        font-size: 24px;
+    }
     
 }
 h3 {
-    font-size: 16px;
+    font-size: small;
     color: #AE8A14;
     font-weight: 900; 
     margin-top: 2px;
  }
 p {
-    
+    font-size:medium ;
 }
 .img_wrapper{
     width: 35%;
@@ -44,12 +51,16 @@ p {
     float: left;
 }
 `
-
-const RandoMovieHeaderWrapper = styled.div`
+const RandomMovieHeaderWrapper = styled.div`
 width: 55%;
 float: left;
 margin-right: 2.5%;
 height: 100%;
+overflow: auto;
+
+::-webkit-scrollbar { 
+    display: none; 
+}
 `
 export const RandomMovie = () => {
 
@@ -63,12 +74,11 @@ export const RandomMovie = () => {
             <div className="img_wrapper">
                 <img src={movie.thumbnail}></img>
             </div>
-            <RandoMovieHeaderWrapper>
+            <RandomMovieHeaderWrapper>
                 <h1 >{movie.title}</h1>
                 <h3>{movie.year}</h3>
                 <p>{movie.description}</p>
-            </RandoMovieHeaderWrapper>
+            </RandomMovieHeaderWrapper>
         </MovieWrapper>
-
     )
 }

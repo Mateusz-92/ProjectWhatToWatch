@@ -1,24 +1,22 @@
 import React from "react";
 import styled from "styled-components";
-import { blinkingLight } from "./blinkingLight";
+import { blinkingLight, rolls } from "./Animation";
 import { Link, Outlet } from "react-router-dom";
 import { LogoComponent } from "./LogoComponent";
-
 
 export const HomeWrapper = styled.div`
   background-color: #f8c317;
   color: #3E3134;
-  position: relative;
+  /* display: flex ;
+  flex-direction: column ; */
   box-sizing: border-box;
   height: 100vh;
-  /* max-width: 500px; */
   h2 {
     text-align: center;
     margin-left: 2.5%;
   }
   
-`;
-
+`
 const ButtonWrapper = styled.button`
   width: 90%;
   height: 5rem;
@@ -34,38 +32,54 @@ const ButtonWrapper = styled.button`
 `
 const Image = styled.img`
   animation: ${blinkingLight} 1.5s linear infinite;
-  max-width: 90%;
-
+  max-width: 100%;
+  height: auto;
+  
 `
 const ImageContent = styled.div`
   box-sizing: border-box;
-  margin-left: 1em;
+  margin-left: 5%;
+  margin-top: 2rem;
   width: 100%;
   display: flex;
   justify-content: center;
   
-
-
-  /* img {
-    width: 15rem;
-  } */
+  .s_rol  {
+    position: absolute;
+    left: -8%;
+    top: 5%;
+    animation: ${rolls} 3s linear infinite ;
+    max-width: 100%;
+    max-height: 100%;
+    
+  }
+  .b_rol  {
+    position: absolute;
+    right:1px;
+    top: -10px;
+    animation: ${rolls} 3s linear infinite ;
+    max-width: 100%;
+    max-height: 100%;
+    
+  }
   .camera {
-    max-width: 90%;
+    max-width: 100%;
+    max-height: 100%;
+    margin-top: 35%;
   }
   .lightWrapper{
     width: 40%;
   }
 `
 const CameraWrapper = styled.div`
-    
     float: left;
     margin-left: 5px;
+    position: relative ;
 `
 const LightWrapper = styled.div`
- /* width: 35%; */
  float: left;
+ margin-left:5px;
 `
-
 
 export const Home = (props) => {
   return (
@@ -74,14 +88,16 @@ export const Home = (props) => {
       <div>
         <h2>Lubisz stare filmy? <br />Podpowiemy Ci który obejrzeć </h2>
       </div>
-      <Link to="/revolver"><ButtonWrapper >
+      <Link to="/start"><ButtonWrapper >
         Rozpocznij wyszukiwanie
       </ButtonWrapper>
       </Link>
       <Outlet />
       <ImageContent>
         <CameraWrapper>
-          <img className="camera" src="/images/camera.png" />
+          <img className="camera" src="/images/camera2.png" />
+          <img className="s_rol" src="/images/s_rol.png" />
+          <img className="b_rol" src="/images/b_rol.png" />
         </CameraWrapper>
         <LightWrapper>
           <Image src="images/light.png" />

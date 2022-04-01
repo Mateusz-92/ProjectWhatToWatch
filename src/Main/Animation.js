@@ -1,4 +1,3 @@
-
 import { keyframes } from "styled-components";
 
 
@@ -17,4 +16,12 @@ export const blinkingLight = () => {
         opacity:1;
       }
     `;
+}
+
+export const rolls = () => {
+  return keyframes`
+  0%{
+    transform: rotate(360deg) ;
+  }
+  `
 }

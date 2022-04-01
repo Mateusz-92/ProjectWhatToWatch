@@ -8,13 +8,17 @@ const RandomHeader = styled.div`
  margin-bottom: 2%;
  margin-top: 2%;
  position: relative;
-
+ 
  .bcg_img{
-     max-height: 90%;
+     height: 100%;
      position: absolute;
-     right: 2px;
+     right: 2.5%;
      bottom: 1px;
      opacity: 80%;
+     @media  (min-width:768px){
+     height: 140% ;
+    }
+
  }
  span{
      font-size: large;
@@ -22,16 +26,15 @@ const RandomHeader = styled.div`
     font-weight: 500;
  }
  .list_wrapper{
-     position: absolute;
-     bottom: 1px;
+     margin-left: 2.5%;
+
  }
  .line{
      margin-right: 5px;
  }
  h1 {
      margin-left: 2.5%;
-     font-size: 50px;   
-     
+     font-size: 50px;    
  }
 `
 
@@ -51,6 +54,5 @@ export const Random = () => {
             <RandomMovie></RandomMovie>
             <RandomMovie></RandomMovie>
         </HomeWrapper>
-
     )
 }

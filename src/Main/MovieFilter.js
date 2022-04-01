@@ -15,7 +15,7 @@ const MovieFilterHeader = styled.div`
      right: 2px;
      top: 0px;
      max-width: 80%;
-     opacity: 90%;
+     opacity: 60%;
  }
 
  .type_of_filter{
@@ -26,42 +26,31 @@ const MovieFilterHeader = styled.div`
 const MovieFilterWrapper = styled.div`
 margin-top: 5rem;
 
-
-
-
-
-
 .filter_elements{
     font-size: x-large;
     padding: 0.5em;
     font-weight: 700;
     margin-bottom: 110px;
     display: grid;
-    grid-template-columns: auto auto auto auto auto  ;
+    grid-template-columns: auto auto auto  ;
+    grid-column-gap: 1% ;
     
 }
 `
 const Filter = styled.div`
-  background-color: ${props => props.selected ? 'red' : '#ffd756'};
-  /* border: ${props => props.selected ? 'solid black 1px' : '#ffd756'}; */
-/* width: 50px;
-height: 50px; */
+background-color: ${props => props.selected ? 'red' : '#ffd756'};
 border-radius: 40%;
 text-align: center;
 line-height:50px;
 padding: 2px;
 font-size: large;
 font-weight: bold;
-margin-right: .3rem;
 margin-top: .5rem;
 z-index: 2;
 
-
-
-
 `
-const CoverWrapper = styled.div`
-/* margin: auto; */
+export const CoverWrapper = styled.div`
+margin-top: 2%;
 padding-bottom: 2px;
 .links{
     text-decoration: none;
@@ -71,40 +60,37 @@ padding-bottom: 2px;
     color: #3E3134;
     
   }
-
-
 .cover {
-    width: 90%;
-    height: 60%;
-    
-    /* float: left; */
+    width: 100%;
+    height: 65%;
 }
 .thumbnail {
-    max-width: 100%;
-    min-width: 100%;
-    min-height: 100%;
-    max-height: 100%;
+    width: 100%;
+    height: 100%;
     
 
 }
 .title{
     width: 90%;
+    margin-top: 2px;
      margin-bottom: 2rem;
     text-align: center;
     
 }
 `
-const MoviesWrapper = styled.div`
-margin-left:2.5%;
+export const MoviesWrapper = styled.div`
+width: 95%;
+margin: 0 auto;
 
 
 .movies{
     display: grid;
-grid-template-columns: 1fr 1fr;
+grid-template-columns: 49% 49%;
+grid-column-gap: 2% ;
 }
 `
 
-export const MovieFilter = ({ dataList, handler, movieFilterHeader, typeOfFilter }) => {
+export const MovieFilter = ({ dataList, handler, movieFilterHeader, typeOfFilter, backImage }) => {
     console.log('MovieFilter', dataList, handler)
     const [movies, setMovies] = useState([])
     const [selectedValue, setSelectedValue] = useState('');
@@ -125,7 +111,7 @@ export const MovieFilter = ({ dataList, handler, movieFilterHeader, typeOfFilter
             <BackButton />
             <MovieFilterHeader>
                 <h1>{movieFilterHeader}</h1>
-                <img className="clock" src="/images/clock.png" ></img>
+                <img className="clock" src={backImage} ></img>
                 <span className="type_of_filter">{typeOfFilter}</span>
             </MovieFilterHeader>
             <MovieFilterWrapper>
@@ -149,7 +135,7 @@ export const MovieFilter = ({ dataList, handler, movieFilterHeader, typeOfFilter
                             <>
 
                                 <CoverWrapper >
-                                    <Link className="links" to={{ pathname: `${movie.id}` }} >
+                                    <Link className="links" to={`${movie.id}`} >
                                         <div class="cover">
                                             <img className="thumbnail" src={movie.thumbnail}></img>
                                         </div>

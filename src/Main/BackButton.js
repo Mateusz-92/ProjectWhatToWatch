@@ -1,14 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 
 export const BackWrapper = styled.div`
-    margin-left: 2.5%;
+    margin-left: 2.5%; ;
+
     button {
 background-color: #f8c317;
 border: none;
+font-weight:bold ;
 }
+
 button :hover{
     background-color:  #FFD756;
 }
@@ -23,14 +25,13 @@ span {
 }
 
 `
-
 export const BackButton = () => {
+    const navigate = useNavigate();
+
     return (
         <BackWrapper>
-            <Link className="backLink" to="/revolver">
-                <button><img src="/images/back_icon.png"></img></button>
-                <span>BACK</span>
-            </Link>
+            <button onClick={() => navigate(-1)}><img src="/images/back_icon.png"></img>BACK</button>
+
         </BackWrapper>
     )
 }

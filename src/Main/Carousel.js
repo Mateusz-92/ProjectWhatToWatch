@@ -39,17 +39,12 @@ const ButtonRight = styled.button`
 
 `;
 const ActuallType = styled.div`
-  /* width: 15rem;
-  height: 16rem; */
   width: 70%;
   height: 75%;
   background-color: #ffd756;
   position: relative;
   left: 50%;
   transform: translateX(-50%) ;
-;  /* border: 2px solid blue; */
-  
-
 
   .picture {
     position: absolute;
@@ -82,12 +77,16 @@ const ActuallType = styled.div`
   }
 `;
 export const Carousel = (props) => {
-  const textOfSearch = ["Gatunek", "Rok produkcji", "Polecane", "Losowy"];
+  const textOfSearch = ["Gatunek", "Rok produkcji", "Polecane", "Losowy", "Ranking"];
+  const linksArray = ["Genre", "YearOfProduction", "Recommended", "Random", "Rank"];
+  const imagesArray = ["/images/genre.png", "/images/year_of_production.png", "/images/recommended.png", "/images/select_tag.png", "/images/rank.png"]
 
   const [index, SetIndex] = useState(0);
+  const [image, SetImage] = useState(0);
 
   const NextTypeHandler = () => {
     SetIndex((index) => (index + 1) % textOfSearch.length);
+    SetImage((image) => (image + 1) % imagesArray.length);
   };
   const PrevTypeHandler = () => {
     SetIndex((index) => {
@@ -98,17 +97,23 @@ export const Carousel = (props) => {
         return (index - 1) % textOfSearch.length;
       }
     });
+    SetImage((image) => {
+      if (image === 0) {
+        return image = imagesArray.length - 1
+      }
+      else {
+        return (image - 1) % imagesArray.length;
+      }
+    });
   };
-
-
   return (
     <>
       <TypeOfSearch>
         <ActuallType >
           <ButtonLeft onClick={PrevTypeHandler} />
           <ButtonRight onClick={NextTypeHandler} />
-          <img className="picture" src="/images/select_tag.png"></img>
-          <Link className="links" to={textOfSearch[index]}>
+          <Link className="links" to={linksArray[index]}>
+            <img className="picture" src={imagesArray[image]}></img>
             <span>{textOfSearch[index]}</span>
           </Link>
           <Outlet />
