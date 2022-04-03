@@ -48,7 +48,7 @@ const ImageContent = styled.div`
     position: absolute;
     left: -8%;
     top: 5%;
-    animation: ${rolls} 3s linear infinite ;
+    animation: ${rolls} 5s linear infinite ;
     max-width: 100%;
     max-height: 100%;
     
@@ -57,7 +57,7 @@ const ImageContent = styled.div`
     position: absolute;
     right:1px;
     top: -10px;
-    animation: ${rolls} 3s linear infinite ;
+    animation: ${rolls} 3.5s linear infinite ;
     max-width: 100%;
     max-height: 100%;
     

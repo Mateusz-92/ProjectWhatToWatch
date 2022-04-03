@@ -21,6 +21,7 @@ import { Random } from "./Main/Random"
 import { Movie } from "./Main/Movie"
 import { Rank } from "./Main/Rank"
 import { InterestingMoviesFacts } from './Main/InterestingMoviesFacts';
+import { Credits } from './Main/Credits';
 
 const rootElement = document.getElementById("root");
 render(
@@ -39,6 +40,7 @@ render(
       <Route path="start/Recommended/:id" element={<Movie />} />
       <Route path="/start/Recommended/" element={<Recommended />} />
       <Route path="/Interesting_facts" element={<InterestingMoviesFacts />} />
+      <Route path='/Credits' element={<Credits />} />
 
 
 

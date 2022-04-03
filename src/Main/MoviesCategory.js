@@ -108,7 +108,7 @@ export const MoviesCategory
                                     <Link className="links" to='/Interesting_Facts'>Ciekawostki</Link>
                                 </li>
                                 <li>
-                                    <Link className="links" to='/'>O aplikacji</Link>
+                                    <Link className="links" to='/Credits'>O aplikacji</Link>
                                 </li>
                             </ul>
                         </List>
@@ -122,9 +122,15 @@ export const MoviesCategory
                         <Link to="/" style={linkStyle}>
                             <button><img src="/images/home.png" /></button>
                         </Link>
-                        <button><img src="/images/settings.png" /></button>
-                        <button><img src="/images/person.png" /></button>
-                        <button><img src="/images/favourite.png" /></button>
+                        <Link to='/Interesting_Facts'>
+                            <button><img src="/images/settings.png" /></button>
+                        </Link>
+                        <Link to='/Credits' >
+                            <button><img src="/images/person.png" /></button>
+                        </Link>
+                        <Link to='/start/Recommended'>
+                            <button><img src="/images/favourite.png" /></button>
+                        </Link>
                     </Shortcuts>
                 </MoviesCategoryWrapper>
             </div>
