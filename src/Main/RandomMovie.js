@@ -14,7 +14,6 @@ margin-right: 2.5%;
 
 @media  (min-width:768px) {
     height: 55%;
-    margin-bottom:2% ;
 }
 
 img {
@@ -30,9 +29,9 @@ h1 {
     font-size: medium;
     font-weight: 900;
     margin-bottom: 2px;
-    @media  (min-width:768px){
+    /* @media  (min-width:768px){
         font-size: 24px;
-    }
+    } */
     
 }
 h3 {

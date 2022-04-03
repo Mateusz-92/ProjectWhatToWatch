@@ -63,6 +63,9 @@ padding-bottom: 2px;
 .cover {
     width: 100%;
     height: 65%;
+    @media (min-width: 768px) {
+        height: 85%;
+    }
 }
 .thumbnail {
     width: 100%;
