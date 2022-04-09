@@ -94,18 +94,19 @@ const HeaderWrapper = styled.div`
 `;
 export const MoviesCategory = (props) => {
   const [toggle, setToggle] = useState(false);
+  const toggleChanged = () => setToggle(!toggle);
   return (
     <div>
       <MoviesCategoryWrapper>
         <HeaderWrapper>
           <LogoComponent></LogoComponent>
         </HeaderWrapper>
-        <ListButton onClick={() => setToggle(!toggle)}>
+        <ListButton onClick={toggleChanged}>
           <img src="/images/list.png" />
         </ListButton>
         {toggle && (
-          <List>
-            <ul onClick={() => setToggle(false)}>
+          <List onClick={toggleChanged}>
+            <ul>
               <li>
                 <Link className="links" to="/">
                   Home
