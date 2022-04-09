@@ -3,35 +3,33 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
 export const BackWrapper = styled.div`
-    margin-left: 2.5%; ;
+  margin-left: 2.5%;
 
-    button {
-background-color: #f8c317;
-border: none;
-font-weight:bold ;
-}
+  button {
+    background-color: #f8c317;
+    border: none;
+    font-weight: bold;
+  }
 
-button :hover{
-    background-color:  #FFD756;
-}
-span {
+  button :hover {
+    background-color: #ffd756;
+  }
+  span {
     font-weight: 900;
-    
-}
-.backLink{
+  }
+  .backLink {
     text-decoration: none;
-    color: #3E3134;
-
-}
-
-`
+    color: #3e3134;
+  }
+`;
 export const BackButton = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    return (
-        <BackWrapper>
-            <button onClick={() => navigate(-1)}><img src="/images/back_icon.png"></img>BACK</button>
-
-        </BackWrapper>
-    )
-}
+  return (
+    <BackWrapper>
+      <button onClick={() => navigate(-1)}>
+        <img src="/images/back_icon.png"></img>BACK
+      </button>
+    </BackWrapper>
+  );
+};

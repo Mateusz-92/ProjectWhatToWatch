@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 // import ReactDOM from 'react-dom';
-import './index.css';
+import "./index.css";
 // import App from './App';
-import reportWebVitals from './reportWebVitals';
+import reportWebVitals from "./reportWebVitals";
 
 // ReactDOM.render(
 //   <React.StrictMode>
@@ -16,12 +16,12 @@ import { MoviesCategory } from "./Main/MoviesCategory";
 import { Home } from "./Main/Home";
 import { Genre } from "./Main/Genre";
 import { YearOfProductions } from "./Main/YearOfProductions";
-import { Recommended } from "./Main/Recommended"
-import { Random } from "./Main/Random"
-import { Movie } from "./Main/Movie"
-import { Rank } from "./Main/Rank"
-import { InterestingMoviesFacts } from './Main/InterestingMoviesFacts';
-import { Credits } from './Main/Credits';
+import { Recommended } from "./Main/Recommended";
+import { Random } from "./Main/Random";
+import { Movie } from "./Main/Movie";
+import { Rank } from "./Main/Rank";
+import { InterestingMoviesFacts } from "./Main/InterestingMoviesFacts";
+import { Credits } from "./Main/Credits";
 
 const rootElement = document.getElementById("root");
 render(
@@ -40,11 +40,7 @@ render(
       <Route path="start/Recommended/:id" element={<Movie />} />
       <Route path="/start/Recommended/" element={<Recommended />} />
       <Route path="/Interesting_facts" element={<InterestingMoviesFacts />} />
-      <Route path='/Credits' element={<Credits />} />
-
-
-
-
+      <Route path="/Credits" element={<Credits />} />
     </Routes>
   </BrowserRouter>,
   rootElement
