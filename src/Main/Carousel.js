@@ -28,19 +28,19 @@ const ButtonLeft = styled.button`
   border-left: #ffd756;
 `;
 const ButtonRight = styled.button`
- width: 0;
-height: 0;
-border-top: 30px solid transparent;
-border-bottom: 30px solid transparent;
-border-left: 30px solid #3e3134;
-position: absolute;
-top: 50%;
--webkit-transform: translateY(-50%);
--ms-transform: translateY(-50%);
-transform: translateY(-50%);
-right: 10px;
-background-color: #ffd756;
-border-right: #ffd756;
+  width: 0;
+  height: 0;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  border-left: 30px solid #3e3134;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 10px;
+  background-color: #ffd756;
+  border-right: #ffd756;
 `;
 const ActuallType = styled.div`
   width: 70%;
@@ -67,7 +67,6 @@ const ActuallType = styled.div`
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
-    /* border: solid white 2px; */
     justify-content: flex-end;
   }
   .links {
@@ -80,48 +79,44 @@ const ActuallType = styled.div`
   }
 `;
 export const Carousel = (props) => {
-  const textOfSearch = [
-    "Gatunek",
-    "Rok produkcji",
-    "Polecane",
-    "Losowy",
-    "Ranking",
-  ];
-  const linksArray = [
-    "Genre",
-    "YearOfProduction",
-    "Recommended",
-    "Random",
-    "Rank",
-  ];
-  const imagesArray = [
-    "/images/genre.png",
-    "/images/year_of_production.png",
-    "/images/recommended.png",
-    "/images/select_tag.png",
-    "/images/rank.png",
+  const items = [
+    {
+      name: "Gatunek",
+      redirect: "Genre",
+      image: "/images/genre.png",
+    },
+    {
+      name: "Rok produkcji",
+      redirect: "YearOfProduction",
+      image: "/images/year_of_production.png",
+    },
+    {
+      name: "Polecane",
+      redirect: "Recommended",
+      image: "/images/recommended.png",
+    },
+    {
+      name: "Losowy",
+      redirect: "Random",
+      image: "/images/select_tag.png",
+    },
+    {
+      name: "Ranking",
+      redirect: "YearOfProduction",
+      image: "/images/rank.png",
+    },
   ];
 
   const [index, SetIndex] = useState(0);
-  const [image, SetImage] = useState(0);
-
   const NextTypeHandler = () => {
-    SetIndex((index) => (index + 1) % textOfSearch.length);
-    SetImage((image) => (image + 1) % imagesArray.length);
+    SetIndex((index) => (index + 1) % Object.keys(items).length);
   };
   const PrevTypeHandler = () => {
     SetIndex((index) => {
       if (index === 0) {
-        return (index = textOfSearch.length - 1);
+        return (index = Object.keys(items).length - 1);
       } else {
-        return (index - 1) % textOfSearch.length;
-      }
-    });
-    SetImage((image) => {
-      if (image === 0) {
-        return (image = imagesArray.length - 1);
-      } else {
-        return (image - 1) % imagesArray.length;
+        return (index - 1) % Object.keys(items).length;
       }
     });
   };
@@ -131,9 +126,9 @@ export const Carousel = (props) => {
         <ActuallType>
           <ButtonLeft onClick={PrevTypeHandler} />
           <ButtonRight onClick={NextTypeHandler} />
-          <Link className="links" to={linksArray[index]}>
-            <img className="picture" src={imagesArray[image]}></img>
-            <span>{textOfSearch[index]}</span>
+          <Link className="links" to={items[index].redirect}>
+            <img className="picture" src={items[index].image}></img>
+            <span>{items[index].name}</span>
           </Link>
           <Outlet />
         </ActuallType>
