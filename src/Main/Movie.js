@@ -59,9 +59,10 @@ export const Movie = () => {
   useEffect(() => {
     getMovieById(id).then((data) => {
       setIsLoading(false);
-      setMovie(data)});
+      setMovie(data);
+    });
   }, []);
-  if (isLoading) return <div>loading...</div>
+  if (isLoading) return <div>loading...</div>;
   return (
     <HomeWrapper>
       <MovieWrapper>
