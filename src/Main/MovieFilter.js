@@ -96,10 +96,6 @@ export const MovieFilter = ({
   console.log("MovieFilter", dataList, handler);
   const [movies, setMovies] = useState([]);
   const [selectedValue, setSelectedValue] = useState("");
-  // const [isOff, setIsOff] = useState(true);
-  // const active = { backgroundColor: isOff ? '' : 'blue' };
-  //  const dataList = props.dataList; // jest to rowne {dataList}
-  // const {dataList} = props;  ten sam efekt co w argumetach MovieFilter;
 
   const fetchByDecade = (decade) => {
     setSelectedValue(decade.name);
