@@ -31,3 +31,6 @@ export const getMovieByDecade = (decade) => {
 export const getMovieById = (id) => {
   return api.get(`movie/${id}`);
 };
+export const fetchRandomFunFact = () => {
+  return api.get("funfact/random");
+};

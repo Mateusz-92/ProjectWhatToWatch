@@ -1,4 +1,6 @@
 import React from "react";
+import { useEffect, useState } from "react";
+import { fetchRandomFunFact } from "../Api/Movies";
 import { SugestionMovies } from "./sugestionMovies";
 import { BackButton } from "./BackButton";
 import { HomeWrapper } from "./Home";
@@ -36,24 +38,30 @@ const FactImage = styled.div`
 `;
 
 export const InterestingMoviesFacts = () => {
+  const [fact, setFact] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
+  const fetchHandler = () => {
+    fetchRandomFunFact().then((data) => {
+      setIsLoading(false);
+      setFact(data);
+    });
+  };
+  useEffect(() => {
+    fetchHandler();
+  }, []);
+  if (isLoading) return <div>loading...</div>;
   return (
     <HomeWrapper>
       <FactWrapper>
         <BackButton />
         <FactImage>
-          <img src="images/ciekawostki.png" />
+          <img src="/images/Ciekawostki.png" />
         </FactImage>
-        <h2>Ciekawostki</h2>
-        <p>
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum."
-        </p>
-        <button className="btn">Button</button>
+        <h2>{fact.title}</h2>
+        <p>{fact.content}</p>
+        <button onClick={fetchHandler} className="btn">
+          Losuj
+        </button>
         <SugestionMovies />
       </FactWrapper>
     </HomeWrapper>

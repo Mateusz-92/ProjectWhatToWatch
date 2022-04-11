@@ -59,12 +59,14 @@ const RandomMovieHeaderWrapper = styled.div`
 `;
 export const RandomMovie = () => {
   const [movie, setRandom] = useState({});
-  const [isLoading, setIsLoading]= useState(true)
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
-    fetchRandomMovie().then((data) =>{
+    fetchRandomMovie().then((data) => {
       setIsLoading(false);
-      setRandom(data)});
+      setRandom(data);
+    });
   }, []);
+  if (isLoading) return <h1>...loading</h1>;
   return (
     <MovieWrapper>
       <div className="img_wrapper">
