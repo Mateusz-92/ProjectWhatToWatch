@@ -34,6 +34,7 @@ render(
       <Route path="start/Recommended" element={<Recommended />} />
       <Route path="start/Random" element={<Random />} />
       <Route path="start/Genre/:id" element={<Movie />} />
+      <Route path="movie/:id" element={<Movie />} />
       <Route path="start/YearOfProduction/:id" element={<Movie />} />
       <Route path="start/Rank" element={<Rank />} />
       <Route path="start/Rank/:id" element={<Movie />} />

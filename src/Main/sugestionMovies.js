@@ -12,6 +12,9 @@ const Wrapper = styled.div`
   h3 {
     text-transform: uppercase;
   }
+  .cover {
+    height: 60%;
+  }
 `;
 const SugestionMoviesWrapper = styled.div`
   margin-top: 0.5rem;
@@ -24,7 +27,8 @@ const SugestionMoviesWrapper = styled.div`
 
   img {
     width: 100%;
-    height: 80%;
+    height: 100%;
+    border-radius: 8px;
   }
   .links {
     text-decoration: none;
@@ -46,7 +50,7 @@ const StyledLink = styled(Link)`
   }
 `;
 
-export const SugestionMovies = () => {
+export const SugestionMovies = ({}) => {
   const [movies, setMovie] = useState([]);
   useEffect(() => {
     getMovieByTag("fav").then((data) => setMovie(data));
@@ -56,21 +60,23 @@ export const SugestionMovies = () => {
     <>
       <h3>Proponowane</h3>
       {movies.length > 0 && (
-      <Wrapper>
-        {movies
-          .map((movie) => (
-            <SugestionMoviesWrapper>
-              <StyledLink to="/start/recommended/">
-                <div component={Link} to={"/first"} key={movie.id}>
-                  <img src={movie.thumbnail} />
-                  <span>{movie.title}</span>
-                  <span>{movie.year}</span>
-                </div>
-              </StyledLink>
-            </SugestionMoviesWrapper>
-          ))
-          .slice(1, 4)}
-      </Wrapper>
+        <Wrapper>
+          {movies
+            .map((movie) => (
+              <SugestionMoviesWrapper>
+                <StyledLink to={`movie/${movie.id}`}>
+                  <div key={movie.id}>
+                    <div className="cover">
+                      <img src={movie.thumbnail} />
+                    </div>
+                    <span>{movie.title}</span>
+                    <span>{movie.year}</span>
+                  </div>
+                </StyledLink>
+              </SugestionMoviesWrapper>
+            ))
+            .slice(1, 4)}
+        </Wrapper>
       )}
     </>
   );

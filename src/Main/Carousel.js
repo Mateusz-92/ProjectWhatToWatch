@@ -102,7 +102,7 @@ export const Carousel = (props) => {
     },
     {
       name: "Ranking",
-      redirect: "YearOfProduction",
+      redirect: "Rank",
       image: "/images/rank.png",
     },
   ];

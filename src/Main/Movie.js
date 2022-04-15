@@ -26,6 +26,7 @@ const ImageWrapper = styled.div`
   img {
     width: 100%;
     height: 100%;
+    border-radius: 8px;
   }
 `;
 const Genres = styled.div`
@@ -69,6 +70,7 @@ export const Movie = () => {
         <BackButton />
         <ImageWrapper>
           <img src={movie.thumbnail}></img>
+          {/* <img src={movie.thumbnail}></img> */}
         </ImageWrapper>
         <Header>
           <span>{movie.year}</span>

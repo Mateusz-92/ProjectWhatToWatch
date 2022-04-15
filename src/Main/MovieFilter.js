@@ -50,12 +50,14 @@ const Filter = styled.div`
 export const CoverWrapper = styled.div`
   margin-top: 2%;
   padding-bottom: 2px;
+  height: 100%;
   .links {
     text-decoration: none;
     color: black;
     font-size: larger;
     font-weight: 600;
     color: #3e3134;
+    /* height: 20%; */
   }
   .cover {
     width: 100%;
@@ -67,12 +69,15 @@ export const CoverWrapper = styled.div`
   .thumbnail {
     width: 100%;
     height: 100%;
+    border-radius: 8px;
   }
   .title {
     width: 90%;
     margin-top: 2px;
     margin-bottom: 2rem;
     text-align: center;
+    font-size: 17px;
+    font-weight: bold;
   }
 `;
 export const MoviesWrapper = styled.div`
