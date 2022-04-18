@@ -6,7 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  color: #3e3134;
+  color: #332525;
 }
 * {
   padding: 0;
@@ -16,6 +16,7 @@ body {
 html,
 body {
   height: 100%;
+  
   background-color: #f8c317;
   font-family: "Poppins";
 }

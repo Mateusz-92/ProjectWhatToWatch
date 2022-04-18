@@ -1,5 +1,6 @@
 import React from "react";
 import { MovieFilter } from "./MovieFilter";
+import { ButtonMenu } from "./ButtonMenu";
 import { getMovieByTag } from "../Api/Movies";
 
 export const Rank = () => {
@@ -20,13 +21,20 @@ export const Rank = () => {
       name: "Pełna_sala",
       queryValue: "Pełna_sala",
     },
+    {
+      name: "Pełna_sala_PL",
+      queryValue: "Pełna_sala_PL",
+    },
   ];
   return (
+    <>
     <MovieFilter
       dataList={dataList}
       handler={getMovieByTag}
       movieFilterHeader={"Rankingi Filmowe"}
       backImage={"/images/rank2.png"}
     ></MovieFilter>
+    <ButtonMenu></ButtonMenu>
+    </>
   );
 };

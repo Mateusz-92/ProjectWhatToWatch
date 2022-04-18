@@ -82,27 +82,27 @@ export const Carousel = (props) => {
   const items = [
     {
       name: "Gatunek",
-      redirect: "Genre",
+      redirect: "/genres",
       image: "/images/genre.png",
     },
     {
       name: "Rok produkcji",
-      redirect: "YearOfProduction",
+      redirect: "/year",
       image: "/images/year_of_production.png",
     },
     {
       name: "Polecane",
-      redirect: "Recommended",
+      redirect: "/ourfavourites",
       image: "/images/recommended.png",
     },
     {
       name: "Losowy",
-      redirect: "Random",
+      redirect: "/random",
       image: "/images/select_tag.png",
     },
     {
       name: "Ranking",
-      redirect: "YearOfProduction",
+      redirect: "/rank",
       image: "/images/rank.png",
     },
   ];

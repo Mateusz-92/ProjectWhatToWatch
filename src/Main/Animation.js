@@ -20,7 +20,7 @@ export const blinkingLight = () => {
 export const rolls = () => {
   return keyframes`
   0%{
-    transform: rotate(360deg) ;
+    transform: rotate(-360deg) ;
   }
   `;
 };

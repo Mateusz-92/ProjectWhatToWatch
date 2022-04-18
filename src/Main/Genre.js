@@ -1,6 +1,7 @@
 import React from "react";
 import { MovieFilter } from "./MovieFilter";
 import { getMovieByTag } from "../Api/Movies";
+import { ButtonMenu } from "./ButtonMenu";
 
 export const Genre = () => {
   const dataList = [
@@ -35,11 +36,14 @@ export const Genre = () => {
   ];
 
   return (
-    <MovieFilter
+    <>
+    <MovieFilter 
       dataList={dataList}
       handler={getMovieByTag}
       movieFilterHeader={"Gatunek"}
       backImage={"/images/genre2.png"}
     ></MovieFilter>
+    <ButtonMenu/>
+    </>
   );
 };

@@ -1,7 +1,8 @@
 import React from "react";
 import { HomeWrapper } from "./Home";
-import { BackButton } from "./BackButton";
+import { ButtonMenu } from "./ButtonMenu";
 import styled from "styled-components";
+import { LogoComponent } from "./LogoComponent";
 
 const CreditsWrapper = styled.div`
   width: 10%;
@@ -11,7 +12,7 @@ const CreditsWrapper = styled.div`
 export const Credits = () => {
   return (
     <>
-      <BackButton />
+    <LogoComponent/>
       <CreditsWrapper>
         <h1>Credits</h1>
         <p>Grafika</p>
@@ -19,6 +20,7 @@ export const Credits = () => {
         <p>Backend</p>
         <p>Code Review</p>
       </CreditsWrapper>
+      <ButtonMenu/>
     </>
   );
 };

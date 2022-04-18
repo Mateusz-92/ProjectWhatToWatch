@@ -17,8 +17,12 @@ const MovieWrapper = styled.div`
   }
 
   img {
-    max-width: 100%;
-    max-height: 100%;
+    width: 80%;
+    height: 85%;
+    border-radius: 4px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
 
     @media (min-width: 768px) {
       width: 90%;
@@ -26,7 +30,7 @@ const MovieWrapper = styled.div`
     }
   }
   h1 {
-    font-size: medium;
+    font-size: 20px;
     font-weight: 900;
     margin-bottom: 2px;
   }
@@ -37,20 +41,23 @@ const MovieWrapper = styled.div`
     margin-top: 2px;
   }
   p {
-    font-size: medium;
+    font-size: 14px;
+    font-weight: bold;
   }
   .img_wrapper {
     width: 35%;
     height: 90%;
     margin: 2.5% 2.5% 2.5% 2.5%;
     float: left;
+    position: relative;
   }
 `;
 const RandomMovieHeaderWrapper = styled.div`
   width: 55%;
   float: left;
   margin-right: 2.5%;
-  height: 100%;
+  height: 90%;
+  margin-top: 2.5%;
   overflow: auto;
 
   ::-webkit-scrollbar {
@@ -78,5 +85,6 @@ export const RandomMovie = () => {
         <p>{movie.description}</p>
       </RandomMovieHeaderWrapper>
     </MovieWrapper>
+
   );
 };

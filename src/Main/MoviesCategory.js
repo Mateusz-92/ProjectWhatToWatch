@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { HomeWrapper } from "./Home";
+import { ButtonMenu } from "./ButtonMenu";
 import { Carousel } from "./Carousel";
 import { LogoComponent } from "./LogoComponent";
 import { Link, NavLink } from "react-router-dom";
@@ -12,9 +13,10 @@ const Shortcuts = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-evenly;
-  position: absolute;
+  position: fixed;
   bottom: 0px;
   margin-top: 0.5em;
+
 
   button {
     background-color: #3e3134;
@@ -113,7 +115,7 @@ export const MoviesCategory = (props) => {
                 </Link>
               </li>
               <li>
-                <Link className="links" to="/Interesting_Facts">
+                <Link className="links" to="/funfacts">
                   Ciekawostki
                 </Link>
               </li>
@@ -132,28 +134,7 @@ export const MoviesCategory = (props) => {
           <img src="/images/question_mark.png" />
         </QuestionMark>
         <Carousel />
-        <Shortcuts>
-          <Link to="/" style={linkStyle}>
-            <button>
-              <img src="/images/home.png" />
-            </button>
-          </Link>
-          <Link to="/Interesting_Facts">
-            <button>
-              <img src="/images/settings.png" />
-            </button>
-          </Link>
-          <Link to="/Credits">
-            <button>
-              <img src="/images/person.png" />
-            </button>
-          </Link>
-          <Link to="/start/Recommended">
-            <button>
-              <img src="/images/favourite.png" />
-            </button>
-          </Link>
-        </Shortcuts>
+        <ButtonMenu/>
       </MoviesCategoryWrapper>
     </div>
   );
