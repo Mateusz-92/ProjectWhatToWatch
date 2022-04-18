@@ -17,8 +17,8 @@ const MovieWrapper = styled.div`
   }
 
   img {
-    width: 85%;
-    height: 90%;
+    width: 80%;
+    height: 85%;
     border-radius: 4px;
     position: absolute;
     top: 50%;
@@ -85,5 +85,6 @@ export const RandomMovie = () => {
         <p>{movie.description}</p>
       </RandomMovieHeaderWrapper>
     </MovieWrapper>
+
   );
 };

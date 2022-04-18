@@ -29,19 +29,14 @@ render(
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="start" element={<MoviesCategory />} />
-      <Route path="start/Genre" element={<Genre />} />
-      <Route path="start/YearOfProduction" element={<YearOfProductions />} />
-      <Route path="start/Recommended" element={<Recommended />} />
-      <Route path="start/Random" element={<Random />} />
-      <Route path="start/Genre/:id" element={<Movie />} />
+      <Route path="/genres" element={<Genre />} />
+      <Route path="/year" element={<YearOfProductions />} />
+      <Route path="/ourfavourites" element={<Recommended />} />
+      <Route path="/random" element={<Random />} />
       <Route path="movie/:id" element={<Movie />} />
-      <Route path="start/YearOfProduction/:id" element={<Movie />} />
-      <Route path="start/Rank" element={<Rank />} />
-      <Route path="start/Rank/:id" element={<Movie />} />
-      <Route path="start/Recommended/:id" element={<Movie />} />
-      <Route path="/start/Recommended/" element={<Recommended />} />
-      <Route path="/Interesting_facts" element={<InterestingMoviesFacts />} />
-      <Route path="/Credits" element={<Credits />} />
+      <Route path="/rank" element={<Rank />} />
+      <Route path="/funfacts" element={<InterestingMoviesFacts />} />
+      <Route path="/credits" element={<Credits />} />
     </Routes>
   </BrowserRouter>,
   rootElement

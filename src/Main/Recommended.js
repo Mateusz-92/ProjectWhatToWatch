@@ -1,11 +1,12 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { getMovieByTag } from "../Api/Movies";
-import { BackButton } from "./BackButton";
+import { ButtonMenu } from "./ButtonMenu";
 import { HomeWrapper } from "./Home";
 import { CoverWrapper, MoviesWrapper } from "./MovieFilter";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { LogoComponent } from "./LogoComponent";
 
 const Header = styled.div`
   margin-left: 2.5%;
@@ -31,8 +32,8 @@ export const Recommended = () => {
   }, []);
   return (
     <HomeWrapper>
+      <LogoComponent/>
       <Header>
-        <BackButton />
         <h1>Polecamy do oglądania</h1>
         <img className="star_image" src="/images/recommended2.png"></img>
       </Header>
@@ -40,23 +41,22 @@ export const Recommended = () => {
         {movies.length > 0 && (
           <div className="movies">
             {movies.map((movie) => (
-              <>
-                <CoverWrapper>
-                  <Link className="links" to={`${movie.id}`}>
-                    <div class="cover">
-                      <img className="thumbnail" src={movie.thumbnail}></img>
-                    </div>
-                    <div className="title" key={movie.id}>
-                      {movie.title}
-                      <span>{movie.year}</span>
-                    </div>
-                  </Link>
-                </CoverWrapper>
-              </>
+              <CoverWrapper key={movie.id}>
+                <Link className="links" to={`/movie/${movie.id}`}>
+                  <div class="cover">
+                    <img className="thumbnail" src={movie.thumbnail}></img>
+                  </div>
+                  <div className="title">
+                    <span className="span_overflow">{movie.title}</span>
+                    <span>{movie.year}</span>
+                  </div>
+                </Link>
+              </CoverWrapper>
             ))}
           </div>
         )}
       </MoviesWrapper>
+      <ButtonMenu/>
     </HomeWrapper>
   );
 };

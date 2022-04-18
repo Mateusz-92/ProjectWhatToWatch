@@ -1,11 +1,13 @@
 import React from "react";
 import { SugestionMovies } from "./sugestionMovies";
-import { BackButton } from "./BackButton";
 import { HomeWrapper } from "./Home";
 import { getMovieById } from "../Api/Movies";
+import { ButtonMenu } from "./ButtonMenu";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
+import { LogoComponent } from "./LogoComponent";
+import { Tmp } from "./tmp";
 
 const MovieWrapper = styled.div`
   width: 80%;
@@ -14,10 +16,12 @@ const MovieWrapper = styled.div`
   .btn {
     margin-left: 0px;
   }
+  
 `;
 const ImageWrapper = styled.div`
   margin-bottom: 2.5%;
   margin-top: 1%;
+  height: 60%;
   @media (min-width: 768px) {
     width: 100%;
     height: 30%;
@@ -26,7 +30,11 @@ const ImageWrapper = styled.div`
   img {
     width: 100%;
     height: 100%;
+    max-height: 485px ;
     border-radius: 8px;
+    @media (min-width: 768px) {
+      max-height: 70%;
+    }
   }
 `;
 const Genres = styled.div`
@@ -66,8 +74,8 @@ export const Movie = () => {
   if (isLoading) return <div>loading...</div>;
   return (
     <HomeWrapper>
+      <LogoComponent/>
       <MovieWrapper>
-        <BackButton />
         <ImageWrapper>
           <img src={movie.thumbnail}></img>
           {/* <img src={movie.thumbnail}></img> */}
@@ -83,8 +91,9 @@ export const Movie = () => {
         <Description>
           <span>{movie.description}</span>
         </Description>
-        <SugestionMovies />
+        <Tmp id ={id} />
       </MovieWrapper>
+      <ButtonMenu/>
     </HomeWrapper>
   );
 };

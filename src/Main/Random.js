@@ -1,7 +1,12 @@
 import { HomeWrapper } from "./Home";
 import { RandomMovie } from "./RandomMovie";
-import { BackButton } from "./BackButton";
+import { ButtonMenu } from "./ButtonMenu";
 import styled from "styled-components";
+import { LogoComponent } from "./LogoComponent";
+
+const HomeRandomWrapper = styled(HomeWrapper)`
+height : 85vh;
+`
 
 const RandomHeader = styled.div`
   height: 20%;
@@ -34,12 +39,16 @@ const RandomHeader = styled.div`
     margin-left: 2.5%;
     font-size: 50px;
   }
+  
 `;
+ export const btnwrapper = styled.div`
+ margin-top : 400px;
+`
 
 export const Random = () => {
   return (
     <HomeWrapper>
-      <BackButton />
+      <LogoComponent/>
       <RandomHeader>
         <h1>Losowo</h1>
         <img className="bcg_img" src="/images/bcg_random.png"></img>
@@ -51,6 +60,8 @@ export const Random = () => {
       <RandomMovie></RandomMovie>
       <RandomMovie></RandomMovie>
       <RandomMovie></RandomMovie>
+      <ButtonMenu/>
     </HomeWrapper>
+    
   );
 };

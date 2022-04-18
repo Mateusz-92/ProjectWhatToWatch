@@ -5,7 +5,7 @@ export const LogoComponent = () => {
   const Logo = styled.div`
     position: relative;
     width: 100px;
-    margin-left: 1em;
+    margin-left: 5px;
 
     span {
       position: absolute;

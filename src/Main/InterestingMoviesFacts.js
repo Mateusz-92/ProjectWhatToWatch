@@ -1,26 +1,51 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { fetchRandomFunFact } from "../Api/Movies";
+import { ButtonMenu } from "./ButtonMenu";
 import { SugestionMovies } from "./sugestionMovies";
-import { BackButton } from "./BackButton";
 import { HomeWrapper } from "./Home";
 import styled from "styled-components";
 import { MoviesCategory } from "./MoviesCategory";
+import { LogoComponent } from "./LogoComponent";
+import { MovieTile } from "./MovieTile";
 
 const FactWrapper = styled.div`
   width: 80%;
   margin: 0 auto;
-  .movie_wrapper {
-    width: 80%;
+ 
+  span{
+     display: block ;
   }
-  .cover {
-    width: 40%;
+  h3 {
+    margin-left:1%;
+    margin-bottom: 10px;
+  }
+  .movie_wrapper {
+    width: 95%;
+    margin: 0 auto;
+    
+  }
+  .title{
+    height: 10%;
+  }
+  .tile{
+    float: left;
+    width: 31%;
+    text-align: center ;
+    height: 90%;
+    margin: 0 auto;
+    margin-left: 1%;
+  }
+  .imgwrapper {
+    width: 100%;
+    height: 90%;
   }
   .img {
     width: 100%;
+    height: 100%;
   }
   .btn {
-    width: 100%;
+    width: 95%;
     height: 4rem;
     border-radius: 1rem;
     background-color: #3e3134;
@@ -73,8 +98,8 @@ export const InterestingMoviesFacts = () => {
   let cover = `https://wtwapi.azurewebsites.net${fact.image}`;
   return (
     <HomeWrapper>
+      <LogoComponent/>
       <FactWrapper>
-        <BackButton />
         <FactImage>
           <img src={cover} />
         </FactImage>
@@ -87,17 +112,19 @@ export const InterestingMoviesFacts = () => {
         </div>
         {/* <SugestionMovies /> */}
         <div className="movie_wrapper">
+          <h3>Proponowane</h3>
           {fact.relatedMovies?.map((movie) => (
-            <div key={fact.relatedMovies.id}>
-              <div className="cover">
-                <img className="img" src={movie.thumbnail}></img>
-              </div>
-              <span>{movie.title}</span>
-              <span>{movie.year}</span>
-            </div>
+            <MovieTile
+            redirect= {movie.id}
+            key= {movie.id}
+            thumbnail= {movie.thumbnail}
+            title = {movie.title}
+            year = {movie.year}
+            ></MovieTile>
           ))}
         </div>
       </FactWrapper>
+      <ButtonMenu/>
     </HomeWrapper>
   );
 };

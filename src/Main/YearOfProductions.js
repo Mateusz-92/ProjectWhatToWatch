@@ -1,4 +1,5 @@
 import { getMovieByDecade } from "../Api/Movies";
+import { ButtonMenu } from "./ButtonMenu";
 import { MovieFilter } from "./MovieFilter";
 
 export const YearOfProductions = () => {
@@ -45,6 +46,7 @@ export const YearOfProductions = () => {
     },
   ];
   return (
+    <>
     <MovieFilter
       dataList={dataList}
       handler={getMovieByDecade}
@@ -52,5 +54,7 @@ export const YearOfProductions = () => {
       typeOfFilter={"XX i XXI"}
       backImage={"/images/clock.png"}
     ></MovieFilter>
+    <ButtonMenu/>
+    </>
   );
 };
