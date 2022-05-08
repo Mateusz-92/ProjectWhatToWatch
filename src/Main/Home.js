@@ -11,6 +11,7 @@ export const HomeWrapper = styled.div`
   flex-direction: column ; */
   box-sizing: border-box;
   height: 100vh;
+  width: 100%;
   h2 {
     text-align: center;
     margin-left: 2.5%;

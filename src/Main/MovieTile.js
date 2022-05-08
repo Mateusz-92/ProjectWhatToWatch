@@ -2,32 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const Wrapper = styled.div`
-  display: grid;
-  grid-template-columns: 33% 33% 33%;
-  text-align: center;
-  color: black;
-  
-  
-  h3 {
-    text-transform: uppercase;
-  }
-  .cover {
-    height: 80%;
-    max-height: 165px ;
-    @media (min-width: 768px) {
-      max-height: 70%;
-    }
-  }
-`;
 const SugestionMoviesWrapper = styled.div`
-  margin-top: 0.5rem;
+  margin-top: 5px;
   height: 80%;
-  width: 100%; 
- 
+  width: 100%;
 
   div {
-    width: 95%;
+    width: 90%;
     height: 100%;
   }
 
@@ -45,24 +26,45 @@ const SugestionMoviesWrapper = styled.div`
   }
   span {
     display: block;
+    font-size: 17px;
+    font-weight: bold;
+  }
+  h3 {
+    text-transform: uppercase;
+  }
+  .cover {
+    height: 100%;
+    max-height: 175px;
+    width: 100%;
+    @media (min-width: 400px) {
+      max-height: 100%;
+    }
+  }
+`;
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: #3e3134;
+  &:focus,
+  &:hover,
+  &:visited,
+  &:link,
+  &:active {
+    text-decoration: none;
   }
 `;
 
 export const MovieTile = (props) => {
-          return (
-            
-              <SugestionMoviesWrapper>
-                  <Link to={`/movie/${props.redirect}`}>
-                  <div key={props.id}>
-                    <div className="cover">
-                      <img src={props.thumbnail} />
-                    </div>
-                    <span>{props.title}</span>
-                    <span>{props.year}</span>
-                   
-                  </div>
-                  </Link>
-              </SugestionMoviesWrapper> 
-              
-          )}
-
+  return (
+    <SugestionMoviesWrapper key={props.id}>
+      <StyledLink to={`/movie/${props.redirect}`}>
+        <div>
+          <div className="cover">
+            <img src={props.thumbnail} />
+          </div>
+          <span>{props.title}</span>
+          <span>{props.year}</span>
+        </div>
+      </StyledLink>
+    </SugestionMoviesWrapper>
+  );
+};

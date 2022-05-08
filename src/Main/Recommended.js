@@ -1,7 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { getMovieByTag } from "../Api/Movies";
-import { ButtonMenu } from "./ButtonMenu";
 import { HomeWrapper } from "./Home";
 import { CoverWrapper, MoviesWrapper } from "./MovieFilter";
 import { Link } from "react-router-dom";
@@ -17,11 +16,13 @@ const Header = styled.div`
     right: 2.5%;
     top: 0px;
     max-width: 80%;
-    opacity: 60%;
+    opacity: 80%;
   }
   h1 {
     margin-left: 2.5%;
     margin-top: 2%;
+    z-index: 10;
+    position: relative;
   }
 `;
 
@@ -32,10 +33,12 @@ export const Recommended = () => {
   }, []);
   return (
     <HomeWrapper>
-      <LogoComponent/>
+      <LogoComponent />
       <Header>
         <h1>Polecamy do oglądania</h1>
-        <img className="star_image" src="/images/recommended2.png"></img>
+        <div>
+          <img className="star_image" src="/images/recommended2.png"></img>
+        </div>
       </Header>
       <MoviesWrapper>
         {movies.length > 0 && (
@@ -56,7 +59,6 @@ export const Recommended = () => {
           </div>
         )}
       </MoviesWrapper>
-      <ButtonMenu/>
     </HomeWrapper>
   );
 };

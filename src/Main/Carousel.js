@@ -8,7 +8,6 @@ const TypeOfSearch = styled.div`
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
-  margin-bottom: 3rem;
   height: 100%;
 `;
 
@@ -41,6 +40,7 @@ const ButtonRight = styled.button`
   right: 10px;
   background-color: #ffd756;
   border-right: #ffd756;
+  z-index: 3;
 `;
 const ActuallType = styled.div`
   width: 70%;
@@ -49,6 +49,9 @@ const ActuallType = styled.div`
   position: relative;
   left: 50%;
   transform: translateX(-50%);
+  @media (min-width: 400px) {
+    height: 100%;
+  }
 
   .picture {
     position: absolute;
@@ -103,6 +106,16 @@ export const Carousel = (props) => {
     {
       name: "Ranking",
       redirect: "/rank",
+      image: "/images/rank.png",
+    },
+    {
+      name: "Trial",
+      redirect: "/trial",
+      image: "/images/rank.png",
+    },
+    {
+      name: "Trial2",
+      redirect: "/trial2",
       image: "/images/rank.png",
     },
   ];

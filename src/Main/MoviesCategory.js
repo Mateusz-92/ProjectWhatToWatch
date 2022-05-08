@@ -17,7 +17,6 @@ const Shortcuts = styled.div`
   bottom: 0px;
   margin-top: 0.5em;
 
-
   button {
     background-color: #3e3134;
     border: none;
@@ -25,13 +24,15 @@ const Shortcuts = styled.div`
   }
 `;
 const QuestionMark = styled.div`
-  opacity: 70%;
+  /* opacity: 60%; */
   max-width: 60%;
   position: absolute;
   top: 3rem;
   right: 0;
   z-index: 1;
-
+  @media (min-width: 400px) {
+    max-width: 30%;
+  }
   img {
     max-width: 90%;
   }
@@ -81,6 +82,7 @@ const QuestionHeader = styled.h2`
   color: #3e3134;
   margin-top: 1em;
   margin-bottom: 1em;
+  z-index: 10;
 `;
 const linkStyle = {
   display: "flex",
@@ -134,7 +136,7 @@ export const MoviesCategory = (props) => {
           <img src="/images/question_mark.png" />
         </QuestionMark>
         <Carousel />
-        <ButtonMenu/>
+        <ButtonMenu />
       </MoviesCategoryWrapper>
     </div>
   );

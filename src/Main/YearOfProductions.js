@@ -46,15 +46,13 @@ export const YearOfProductions = () => {
     },
   ];
   return (
-    <>
     <MovieFilter
       dataList={dataList}
       handler={getMovieByDecade}
       movieFilterHeader={"Lata Produkcji"}
       typeOfFilter={"XX i XXI"}
       backImage={"/images/clock.png"}
+      years="XX"
     ></MovieFilter>
-    <ButtonMenu/>
-    </>
   );
 };

@@ -1,10 +1,9 @@
 import React from "react";
 import { HomeWrapper } from "./Home";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { LogoComponent } from "./LogoComponent";
-import { MovieTile } from "./MovieTile";
 
 const MovieFilterHeader = styled.div`
   h1 {
@@ -29,15 +28,13 @@ const MovieFilterHeader = styled.div`
 const MovieFilterWrapper = styled.div`
   margin-top: 5rem;
 
-  .filter_elements {
-    font-size: x-large;
-    padding: 0.5em;
-    font-weight: 700;
-    margin-bottom: 110px;
-    display: grid;
-    /* grid-template-columns: auto auto auto auto auto ; */
-    grid-template-columns: repeat(5, 1fr);
-    gap: 1%;
+  nav ul {
+    height: auto;
+    /* width: 18%; */
+  }
+  nav ul {
+    overflow: hidden;
+    overflow-y: scroll;
   }
 `;
 const Filter = styled.div`
@@ -105,23 +102,29 @@ export const MoviesWrapper = styled.div`
   }
 `;
 
-export const MovieFilter = ({
+export const Genres = ({
   dataList,
   handler,
   movieFilterHeader,
   typeOfFilter,
   backImage,
+  fetch,
+  description,
 }) => {
   console.log("MovieFilter", dataList, handler);
   const [movies, setMovies] = useState([]);
-  const [selectedValue, setSelectedValue] = useState("");
+  const [genres, SetGenre] = useState([]);
 
-  const fetchByDecade = (decade) => {
-    setSelectedValue(decade.name);
-    handler(decade.queryValue).then((data) => {
+  const fetchByDecade = (e) => {
+    handler(e).then((data) => {
       setMovies(data);
     });
   };
+
+  useEffect(() => {
+    fetch().then((data) => SetGenre(data));
+  }, []);
+
   return (
     <HomeWrapper>
       <LogoComponent />
@@ -131,19 +134,29 @@ export const MovieFilter = ({
         <span className="type_of_filter">{typeOfFilter}</span>
       </MovieFilterHeader>
       <MovieFilterWrapper>
-        <div className="filter_elements">
-          {dataList.map((el) => (
-            <Filter
-              selected={el.name === selectedValue}
-              key={el.name}
-              onClick={() => fetchByDecade(el)}
-            >
-              {el.name}
-            </Filter>
-          ))}
-        </div>
+        {/* <div className="select_wrapper">
+          <ul>
+            {genres.map((el) => (
+              <li
+                onClick={() => console.log(fetchByDecade("komedia"))}
+                key={el}
+              >
+                {el}
+              </li>
+            ))}
+          </ul>
+          <p>{description}</p>
+        </div> */}
+        <nav className="filter_elements">
+          <ul>
+            {genres.map((el) => (
+              <li key={el} onClick={() => fetchByDecade(el)}>
+                {el}
+              </li>
+            ))}
+          </ul>
+        </nav>
       </MovieFilterWrapper>
-
       <MoviesWrapper>
         {movies.length > 0 && (
           <div className="movies">

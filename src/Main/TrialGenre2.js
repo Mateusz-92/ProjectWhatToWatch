@@ -1,9 +1,9 @@
 import React from "react";
-import { MovieFilter } from "./MovieFilter";
+import { Genres } from "./TrialGenre";
 import { getMovieByTag } from "../Api/Movies";
-import { ButtonMenu } from "./ButtonMenu";
+import { getGenres } from "../Api/Movies";
 
-export const Genre = () => {
+export const TrailGenre = () => {
   const dataList = [
     {
       name: "dramat",
@@ -34,13 +34,13 @@ export const Genre = () => {
       queryValue: "romans",
     },
   ];
-
   return (
-    <MovieFilter
-      dataList={dataList}
+    <Genres
+      fetch={getGenres}
+      // dataList={dataList}
       handler={getMovieByTag}
       movieFilterHeader={"Gatunek"}
       backImage={"/images/genre2.png"}
-    ></MovieFilter>
+    ></Genres>
   );
 };

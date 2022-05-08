@@ -27,14 +27,11 @@ export const Rank = () => {
     },
   ];
   return (
-    <>
     <MovieFilter
       dataList={dataList}
       handler={getMovieByTag}
       movieFilterHeader={"Rankingi Filmowe"}
       backImage={"/images/rank2.png"}
     ></MovieFilter>
-    <ButtonMenu></ButtonMenu>
-    </>
   );
 };
