@@ -1,13 +1,5 @@
 import React from "react";
-import { SugestionMovies } from "./sugestionMovies";
-import { HomeWrapper } from "./Home";
-import { getMovieById } from "../Api/Movies";
-import { ButtonMenu } from "./ButtonMenu";
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import styled from "styled-components";
-import { LogoComponent } from "./LogoComponent";
-import { Tmp } from "./tmp";
 
 const Wrapper = styled.div`
   width: 90%;
@@ -22,17 +14,20 @@ const ImageWrapper = styled.div`
   margin-top: 1%;
   height: 60%;
   @media (min-width: 768px) {
-    width: 100%;
-    height: 30%;
+    width: 50%;
+    margin: 0 auto;
+    height: 100%;
   }
 
   img {
     width: 100%;
     height: 100%;
-    max-height: 465px;
+    max-height: 365px;
     border-radius: 8px;
     @media (min-width: 768px) {
-      max-height: 70%;
+      width: 90%;
+      height: 100%;
+      max-height: 590px;
     }
   }
 `;
@@ -42,7 +37,9 @@ const Genres = styled.div`
   font-weight: bold;
   color: #ae8a14;
   font-size: small;
-
+  @media (min-width: 768px) {
+    justify-content: center;
+  }
   span {
     margin-right: 10px;
     text-transform: uppercase;
@@ -56,6 +53,9 @@ const Description = styled.div`
 const Header = styled.div`
   span {
     font-weight: 1000;
+  }
+  @media (min-width: 768px) {
+    text-align: center;
   }
 `;
 

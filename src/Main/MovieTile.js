@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SugestionMoviesWrapper = styled.div`
   margin-top: 5px;
@@ -10,6 +10,10 @@ const SugestionMoviesWrapper = styled.div`
   div {
     width: 90%;
     height: 100%;
+    @media (min-width: 400px) {
+      width: 70%;
+      margin: 0 auto;
+    }
   }
 
   img {
@@ -37,7 +41,7 @@ const SugestionMoviesWrapper = styled.div`
     max-height: 175px;
     width: 100%;
     @media (min-width: 400px) {
-      max-height: 100%;
+      max-height: 400px;
     }
   }
 `;
@@ -54,9 +58,19 @@ const StyledLink = styled(Link)`
 `;
 
 export const MovieTile = (props) => {
+  // const refreshPage = () => {
+  //   setTimeout(() => {
+  //     window.location.reload(false);
+  //   }, 100);
+  //   console.log("page to reload");
+  // };
+  const navigate = useNavigate();
   return (
     <SugestionMoviesWrapper key={props.id}>
-      <StyledLink to={`/movie/${props.redirect}`}>
+      <StyledLink
+        to={`/movie/${props.redirect}`}
+        onClick={() => navigate.go(0)}
+      >
         <div>
           <div className="cover">
             <img src={props.thumbnail} />

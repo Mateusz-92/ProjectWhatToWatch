@@ -28,6 +28,10 @@ const MovieFilterHeader = styled.div`
 `;
 const MovieFilterWrapper = styled.div`
   margin-top: 5rem;
+  @media (min-width: 768px) {
+    width: 80%;
+    margin: 0 auto;
+  }
 
   .filter_elements {
     font-size: x-large;
@@ -68,8 +72,10 @@ export const CoverWrapper = styled.div`
     height: 75%;
     max-height: 283.16px;
     @media (min-width: 768px) {
-      height: 85%;
-      max-height: 100%;
+      height: 100%;
+      /* max-height: 100%; */
+      max-height: 483.16px;
+      /* max-width: 300px; */
     }
   }
   .thumbnail {
@@ -102,6 +108,10 @@ export const MoviesWrapper = styled.div`
     display: grid;
     grid-template-columns: 49% 49%;
     grid-column-gap: 2%;
+    @media (min-width: 768px) {
+      width: 80%;
+      margin: 0 auto;
+    }
   }
 `;
 

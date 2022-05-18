@@ -13,16 +13,23 @@ export const Wrapper = styled.div`
   width: 90%;
   margin: 0 auto;
   margin-top: 5px;
+  @media (min-width: 700px) {
+    grid-column-gap: 0%;
+  }
 `;
 export const Header = styled.h3`
   width: 90%;
   margin: 0 auto;
   display: block;
   text-transform: uppercase;
+  @media (min-width: 700px) {
+    width: 75%;
+  }
 `;
 
 export const Tmp = (props) => {
   const [movies, setMovie] = useState({});
+
   useEffect(() => {
     getRandomSuggestedMovie(props.id).then((data) => setMovie(data));
   }, []);

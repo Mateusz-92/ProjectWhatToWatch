@@ -1,9 +1,11 @@
 import React from "react";
 import { HomeWrapper } from "./Home";
+import { CoverWrapper } from "./CoverWrapper";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { LogoComponent } from "./LogoComponent";
+import { getGenres, getMovieByTag } from "../Api/Movies";
 
 const MovieFilterHeader = styled.div`
   h1 {
@@ -27,15 +29,6 @@ const MovieFilterHeader = styled.div`
 `;
 const MovieFilterWrapper = styled.div`
   margin-top: 5rem;
-
-  nav ul {
-    height: auto;
-    /* width: 18%; */
-  }
-  nav ul {
-    overflow: hidden;
-    overflow-y: scroll;
-  }
 `;
 const Filter = styled.div`
   background-color: ${(props) => (props.selected ? "red" : "#ffd756")};
@@ -48,49 +41,7 @@ const Filter = styled.div`
   margin-top: 0.5rem;
   z-index: 2;
 `;
-export const CoverWrapper = styled.div`
-  margin-top: 2%;
-  padding-bottom: 2px;
-  height: 100%;
-  .links {
-    text-decoration: none;
-    color: black;
-    font-size: larger;
-    font-weight: 600;
-    color: #3e3134;
-    /* height: 20%; */
-  }
-  .cover {
-    width: 100%;
-    height: 75%;
-    max-height: 283.16px;
-    @media (min-width: 768px) {
-      height: 85%;
-      max-height: 100%;
-    }
-  }
-  .thumbnail {
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
-  }
-  .title {
-    width: 90%;
-    margin-top: 2px;
-    margin-bottom: 2rem;
-    text-align: center;
-    font-size: 17px;
-    font-weight: bold;
-  }
-  .span_overflow {
-    display: -webkit-box;
-    /* margin: 0 auto; */
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-`;
+
 export const MoviesWrapper = styled.div`
   width: 95%;
   margin: 0 auto;
@@ -101,21 +52,79 @@ export const MoviesWrapper = styled.div`
     grid-column-gap: 2%;
   }
 `;
+const DropDownContainer = styled("div")`
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 100px;
+  margin-bottom: 20px;
+  font-size: 12px;
+  background-color: #e8b718;
+  border: solid #e8b718;
+  border-radius: 8px;
+`;
+
+const DropDownHeader = styled("div")`
+  padding: 0.4em 2em 0.4em 1em;
+  font-weight: 500;
+  position: relative;
+  img {
+    height: 10px;
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+`;
+
+const DropDownListContainer = styled("div")`
+  max-height: 110px;
+  overflow: scroll;
+  border-radius: 0 0 8px 8px;
+  margin-bottom: 5px;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+`;
+
+const DropDownList = styled("ul")`
+  padding: 0;
+  margin-top: 0;
+  padding-left: 1em;
+  background-color: #e8b718;
+  box-sizing: border-box;
+
+  font-weight: 500;
+  &:first-child {
+    padding-top: 0.8em;
+  }
+`;
+
+const ListItem = styled("li")`
+  list-style: none;
+  margin-bottom: 0.8em;
+`;
 
 export const Genres = ({
   dataList,
   handler,
   movieFilterHeader,
-  typeOfFilter,
   backImage,
   fetch,
-  description,
+  startOption,
 }) => {
   console.log("MovieFilter", dataList, handler);
   const [movies, setMovies] = useState([]);
   const [genres, SetGenre] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedOption, setSelectedOption] = useState(null);
+  // const [tmp, setTmp] = useState();
+  const toggling = () => setIsOpen(!isOpen);
 
   const fetchByDecade = (e) => {
+    setSelectedOption(e);
+    setIsOpen(false);
+    // setTmp(e);
+
     handler(e).then((data) => {
       setMovies(data);
     });
@@ -131,47 +140,41 @@ export const Genres = ({
       <MovieFilterHeader>
         <h1>{movieFilterHeader}</h1>
         <img className="back_image" src={backImage}></img>
-        <span className="type_of_filter">{typeOfFilter}</span>
       </MovieFilterHeader>
-      <MovieFilterWrapper>
-        {/* <div className="select_wrapper">
-          <ul>
-            {genres.map((el) => (
-              <li
-                onClick={() => console.log(fetchByDecade("komedia"))}
-                key={el}
-              >
-                {el}
-              </li>
-            ))}
-          </ul>
-          <p>{description}</p>
-        </div> */}
-        <nav className="filter_elements">
-          <ul>
-            {genres.map((el) => (
-              <li key={el} onClick={() => fetchByDecade(el)}>
-                {el}
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </MovieFilterWrapper>
+      <DropDownContainer>
+        <DropDownHeader onClick={toggling}>
+          {selectedOption || [startOption]}
+          <img src="/images/arrow_down.png"></img>
+        </DropDownHeader>
+        {isOpen && (
+          <DropDownListContainer>
+            <DropDownList>
+              {genres?.map((el) => (
+                <ListItem
+                  onClick={() => fetchByDecade(el.listName)}
+                  key={el.listName}
+                >
+                  {el.listName}
+                </ListItem>
+              ))}
+            </DropDownList>
+          </DropDownListContainer>
+        )}
+      </DropDownContainer>
+
+      {/* <span>{genres[1].description}</span> */}
+
       <MoviesWrapper>
         {movies.length > 0 && (
           <div className="movies">
             {movies.map((movie) => (
-              <CoverWrapper key={movie.id}>
-                <Link className="links" to={`/movie/${movie.id}`}>
-                  <div class="cover">
-                    <img className="thumbnail" src={movie.thumbnail}></img>
-                  </div>
-                  <div className="title">
-                    <span className="span_overflow">{movie.title}</span>
-                    <span>{movie.year}</span>
-                  </div>
-                </Link>
-              </CoverWrapper>
+              <CoverWrapper
+                key={movie.id}
+                redirect={movie.id}
+                thumbnail={movie.thumbnail}
+                title={movie.title}
+                year={movie.year}
+              />
             ))}
           </div>
         )}

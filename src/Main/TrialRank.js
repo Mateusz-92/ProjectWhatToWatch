@@ -3,13 +3,14 @@ import { Genres } from "./TrialGenre";
 import { getMovieByTag } from "../Api/Movies";
 import { getLists } from "../Api/Movies";
 
-export const TrailRank = () => {
+export const TrialRank = () => {
   return (
     <Genres
       fetch={getLists}
       handler={getMovieByTag}
-      movieFilterHeader={"Rank"}
+      movieFilterHeader={"Listy Rankingowe"}
       backImage={"/images/genre2.png"}
+      startOption={"Lista"}
     ></Genres>
   );
 };

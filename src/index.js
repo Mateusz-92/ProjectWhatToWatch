@@ -22,8 +22,8 @@ import { Rank } from "./Main/Rank";
 import { InterestingMoviesFacts } from "./Main/InterestingMoviesFacts";
 import { Credits } from "./Main/Credits";
 import { RandomMovie } from "./Main/RandomMovie";
-import { TrailGenre } from "./Main/TrialGenre2";
-import { TrailRank } from "./Main/TrialRank";
+import { TrialGenre } from "./Main/TrialGenre2";
+import { TrialRank } from "./Main/TrialRank";
 
 const rootElement = document.getElementById("root");
 render(
@@ -39,8 +39,8 @@ render(
       <Route path="/rank" element={<Rank />} />
       <Route path="/funfacts" element={<InterestingMoviesFacts />} />
       <Route path="/credits" element={<Credits />} />
-      <Route path="/trial" element={<TrailGenre />} />
-      <Route path="/trial2" element={<TrailRank />} />
+      <Route path="/trial" element={<TrialGenre />} />
+      <Route path="/trial2" element={<TrialRank />} />
     </Routes>
   </BrowserRouter>,
   rootElement
