@@ -47,7 +47,15 @@ export const CoverWrapper = ({ redirect, thumbnail, title, year }) => {
     <Wrapper>
       <Link className="links" to={`/movie/${redirect}`}>
         <div className="cover">
-          <img className="thumbnail" src={thumbnail}></img>
+          <img
+            className="thumbnail"
+            src={
+              thumbnail === ""
+                ? "https://via.placeholder.com/150x200.png?text=No+Image+Found"
+                : thumbnail
+            }
+            alt="plakat-film"
+          ></img>
         </div>
         <div className="title">
           <span className="span_overflow">{title}</span>

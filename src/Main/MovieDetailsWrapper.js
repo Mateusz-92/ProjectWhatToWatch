@@ -75,7 +75,15 @@ export const MovieDetailsWrapper = ({
   return (
     <Wrapper>
       <ImageWrapper>
-        <img src={thumbnail}></img>
+        <img
+          className="thumbnail"
+          src={
+            thumbnail === ""
+              ? "https://via.placeholder.com/150x200.png?text=No+Image+Found"
+              : thumbnail
+          }
+          alt="plakat-film"
+        ></img>
       </ImageWrapper>
       <div className="cover">
         <Header>

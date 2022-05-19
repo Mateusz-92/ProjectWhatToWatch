@@ -64,7 +64,15 @@ export const MovieTile = (props) => {
       >
         <div>
           <div className="cover">
-            <img src={props.thumbnail} />
+            <img
+              className="thumbnail"
+              src={
+                props.thumbnail === ""
+                  ? "https://via.placeholder.com/150x200.png?text=No+Image+Found"
+                  : props.thumbnail
+              }
+              alt="plakat-film"
+            ></img>
           </div>
           <span>{props.title}</span>
           <span>{props.year}</span>
