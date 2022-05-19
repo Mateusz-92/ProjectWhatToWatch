@@ -18,10 +18,6 @@ const Wrapper = styled.div`
     width: 100%;
     height: 75%;
     max-height: 283.16px;
-    @media (min-width: 768px) {
-      height: 85%;
-      max-height: 100%;
-    }
   }
   .thumbnail {
     width: 100%;
@@ -46,11 +42,11 @@ const Wrapper = styled.div`
   }
 `;
 
-export const CoverWrapper = ({ key, redirect, thumbnail, title, year }) => {
+export const CoverWrapper = ({ redirect, thumbnail, title, year }) => {
   return (
-    <Wrapper key={key}>
+    <Wrapper>
       <Link className="links" to={`/movie/${redirect}`}>
-        <div class="cover">
+        <div className="cover">
           <img className="thumbnail" src={thumbnail}></img>
         </div>
         <div className="title">

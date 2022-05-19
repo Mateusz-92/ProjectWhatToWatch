@@ -31,12 +31,12 @@ render(
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="start" element={<MoviesCategory />} />
-      <Route path="/genres" element={<Genre />} />
+      {/* <Route path="/genres" element={<Genre />} /> */}
       <Route path="/year" element={<YearOfProductions />} />
       <Route path="/ourfavourites" element={<Recommended />} />
       <Route path="/random" element={<RandomMovie />} />
       <Route path="movie/:id" element={<Movie />} />
-      <Route path="/rank" element={<Rank />} />
+      {/* <Route path="/rank" element={<Rank />} /> */}
       <Route path="/funfacts" element={<InterestingMoviesFacts />} />
       <Route path="/credits" element={<Credits />} />
       <Route path="/trial" element={<TrialGenre />} />

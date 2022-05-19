@@ -83,11 +83,11 @@ const ActuallType = styled.div`
 `;
 export const Carousel = (props) => {
   const items = [
-    {
-      name: "Gatunek",
-      redirect: "/genres",
-      image: "/images/genre.png",
-    },
+    // {
+    //   name: "Gatunek",
+    //   redirect: "/genres",
+    //   image: "/images/genre.png",
+    // },
     {
       name: "Rok produkcji",
       redirect: "/year",
@@ -103,18 +103,18 @@ export const Carousel = (props) => {
       redirect: "/random",
       image: "/images/select_tag.png",
     },
+    // {
+    //   name: "Ranking",
+    //   redirect: "/rank",
+    //   image: "/images/rank.png",
+    // },
     {
-      name: "Ranking",
-      redirect: "/rank",
-      image: "/images/rank.png",
-    },
-    {
-      name: "Trial",
+      name: "Gatunek",
       redirect: "/trial",
       image: "/images/rank.png",
     },
     {
-      name: "Trial2",
+      name: "Ranking",
       redirect: "/trial2",
       image: "/images/rank.png",
     },

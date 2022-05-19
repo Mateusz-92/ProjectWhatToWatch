@@ -13,8 +13,9 @@ export const Wrapper = styled.div`
   width: 90%;
   margin: 0 auto;
   margin-top: 5px;
-  @media (min-width: 700px) {
-    grid-column-gap: 0%;
+  @media (min-width: 768px) {
+    grid-template-columns: 32% 32% 32%;
+    grid-column-gap: 2%;
   }
 `;
 export const Header = styled.h3`
@@ -22,9 +23,6 @@ export const Header = styled.h3`
   margin: 0 auto;
   display: block;
   text-transform: uppercase;
-  @media (min-width: 700px) {
-    width: 75%;
-  }
 `;
 
 export const Tmp = (props) => {

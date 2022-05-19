@@ -4,9 +4,15 @@ import styled from "styled-components";
 const Wrapper = styled.div`
   width: 90%;
   margin: 0 auto;
+  padding-bottom: 10px;
 
   .btn {
     margin-left: 0px;
+  }
+  .wrap {
+    @media (min-width: 768px) {
+      text-align: center;
+    }
   }
 `;
 const ImageWrapper = styled.div`
@@ -14,20 +20,18 @@ const ImageWrapper = styled.div`
   margin-top: 1%;
   height: 60%;
   @media (min-width: 768px) {
-    width: 50%;
-    margin: 0 auto;
     height: 100%;
+    text-align: center;
   }
 
   img {
-    width: 100%;
     height: 100%;
+    width: 100%;
     max-height: 365px;
     border-radius: 8px;
     @media (min-width: 768px) {
-      width: 90%;
-      height: 100%;
-      max-height: 590px;
+      max-height: 400px;
+      width: 40%;
     }
   }
 `;
@@ -40,6 +44,7 @@ const Genres = styled.div`
   @media (min-width: 768px) {
     justify-content: center;
   }
+
   span {
     margin-right: 10px;
     text-transform: uppercase;
@@ -51,11 +56,11 @@ const Description = styled.div`
   margin-bottom: 1rem;
 `;
 const Header = styled.div`
-  span {
-    font-weight: 1000;
-  }
   @media (min-width: 768px) {
     text-align: center;
+  }
+  span {
+    font-weight: 1000;
   }
 `;
 
@@ -72,15 +77,17 @@ export const MovieDetailsWrapper = ({
       <ImageWrapper>
         <img src={thumbnail}></img>
       </ImageWrapper>
-      <Header>
-        <span>{year}</span>
-        <h1>{title}</h1>
-      </Header>
-      <Genres>
-        <span>{genres}</span>
-        {/* <span>{[`${movie.genres}`]}> */}
-        <span>{country}</span>
-      </Genres>
+      <div className="cover">
+        <Header>
+          <span>{year}</span>
+          <h1>{title}</h1>
+        </Header>
+        <Genres>
+          <span>{genres}</span>
+          {/* <span>{[`${movie.genres}`]}> */}
+          <span>{country}</span>
+        </Genres>
+      </div>
       <Description>
         <span>{description}</span>
       </Description>

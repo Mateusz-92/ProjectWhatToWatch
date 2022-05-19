@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const LogoComponent = () => {
@@ -6,21 +7,25 @@ export const LogoComponent = () => {
     position: relative;
     width: 100px;
     margin-left: 5px;
+    color: #3e3134;
 
     span {
       position: absolute;
-      top: 1px;
+      top: 5px;
       font-weight: 700;
       font-size: small;
+      line-height: 1;
     }
     img {
       margin-top: 5px;
     }
   `;
   return (
-    <Logo>
-      <img src="/images/logo.png" />
-      <span>WHAT TO WHATCH</span>
-    </Logo>
+    <Link to="/">
+      <Logo>
+        <img src="/images/logo.png" />
+        <span>WHAT TO WHATCH</span>
+      </Logo>
+    </Link>
   );
 };

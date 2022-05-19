@@ -7,20 +7,20 @@ import { LogoComponent } from "./LogoComponent";
 const CreditsWrapper = styled.div`
   width: 10%;
   margin: 0 auto;
+  color: #3e3134;
 `;
 
 export const Credits = () => {
   return (
     <>
-    <LogoComponent/>
+      <LogoComponent />
       <CreditsWrapper>
-        <h1>Credits</h1>
+        <p>CREDITS</p>
         <p>Grafika</p>
         <p>Frontend</p>
         <p>Backend</p>
         <p>Code Review</p>
       </CreditsWrapper>
-      <ButtonMenu/>
     </>
   );
 };

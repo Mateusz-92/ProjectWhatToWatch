@@ -10,10 +10,6 @@ const SugestionMoviesWrapper = styled.div`
   div {
     width: 90%;
     height: 100%;
-    @media (min-width: 400px) {
-      width: 70%;
-      margin: 0 auto;
-    }
   }
 
   img {
@@ -40,8 +36,9 @@ const SugestionMoviesWrapper = styled.div`
     height: 100%;
     max-height: 175px;
     width: 100%;
-    @media (min-width: 400px) {
-      max-height: 400px;
+
+    @media (min-width: 768px) {
+      max-height: 275px;
     }
   }
 `;
@@ -58,12 +55,6 @@ const StyledLink = styled(Link)`
 `;
 
 export const MovieTile = (props) => {
-  // const refreshPage = () => {
-  //   setTimeout(() => {
-  //     window.location.reload(false);
-  //   }, 100);
-  //   console.log("page to reload");
-  // };
   const navigate = useNavigate();
   return (
     <SugestionMoviesWrapper key={props.id}>

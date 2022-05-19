@@ -24,7 +24,6 @@ const Shortcuts = styled.div`
   }
 `;
 const QuestionMark = styled.div`
-  /* opacity: 60%; */
   max-width: 60%;
   position: absolute;
   top: 3rem;

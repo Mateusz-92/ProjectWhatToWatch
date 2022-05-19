@@ -2,56 +2,11 @@ import React from "react";
 import { HomeWrapper } from "./Home";
 import { CoverWrapper } from "./CoverWrapper";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { LogoComponent } from "./LogoComponent";
-import { getGenres, getMovieByTag } from "../Api/Movies";
+import { MovieFilterHeader } from "./MovieFilter";
+import { MoviesWrapper } from "./MovieFilter";
 
-const MovieFilterHeader = styled.div`
-  h1 {
-    margin-left: 2.5%;
-    margin-top: 2%;
-    position: relative;
-    z-index: 10;
-  }
-  .back_image {
-    position: absolute;
-    right: 2px;
-    top: 0px;
-    max-width: 80%;
-    opacity: 80%;
-  }
-
-  .type_of_filter {
-    margin-top: 0.5rem;
-    margin-left: 2.5%;
-  }
-`;
-const MovieFilterWrapper = styled.div`
-  margin-top: 5rem;
-`;
-const Filter = styled.div`
-  background-color: ${(props) => (props.selected ? "red" : "#ffd756")};
-  border-radius: 10px;
-  text-align: center;
-  line-height: 50px;
-  padding: 2px;
-  font-size: large;
-  font-weight: bold;
-  margin-top: 0.5rem;
-  z-index: 2;
-`;
-
-export const MoviesWrapper = styled.div`
-  width: 95%;
-  margin: 0 auto;
-
-  .movies {
-    display: grid;
-    grid-template-columns: 49% 49%;
-    grid-column-gap: 2%;
-  }
-`;
 const DropDownContainer = styled("div")`
   width: 90%;
   margin: 0 auto;
@@ -103,7 +58,12 @@ const ListItem = styled("li")`
   list-style: none;
   margin-bottom: 0.8em;
 `;
-
+const ListDescription = styled.div`
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 40px;
+`;
 export const Genres = ({
   dataList,
   handler,
@@ -117,13 +77,11 @@ export const Genres = ({
   const [genres, SetGenre] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
-  // const [tmp, setTmp] = useState();
   const toggling = () => setIsOpen(!isOpen);
 
   const fetchByDecade = (e) => {
     setSelectedOption(e);
     setIsOpen(false);
-    // setTmp(e);
 
     handler(e).then((data) => {
       setMovies(data);
@@ -148,22 +106,28 @@ export const Genres = ({
         </DropDownHeader>
         {isOpen && (
           <DropDownListContainer>
-            <DropDownList>
-              {genres?.map((el) => (
-                <ListItem
-                  onClick={() => fetchByDecade(el.listName)}
-                  key={el.listName}
-                >
-                  {el.listName}
-                </ListItem>
-              ))}
-            </DropDownList>
+            {genres.length > 0 && (
+              <DropDownList>
+                {genres?.map((el) => (
+                  <ListItem
+                    onClick={() => fetchByDecade(el.listName)}
+                    key={el.listName}
+                  >
+                    {el.listName}
+                  </ListItem>
+                ))}
+              </DropDownList>
+            )}
           </DropDownListContainer>
         )}
       </DropDownContainer>
-
-      {/* <span>{genres[1].description}</span> */}
-
+      <ListDescription className="list_description">
+        {
+          genres[genres.map((el) => el.listName).indexOf(selectedOption)]
+            ?.description
+        }
+      </ListDescription>
+      {/* <span>{genres[1]?.description}</span> */}
       <MoviesWrapper>
         {movies.length > 0 && (
           <div className="movies">

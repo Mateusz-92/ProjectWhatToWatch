@@ -1,9 +1,9 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import { CoverWrapper } from "./CoverWrapper";
 import { getMovieByTag } from "../Api/Movies";
 import { HomeWrapper } from "./Home";
-import { CoverWrapper, MoviesWrapper } from "./MovieFilter";
-import { Link } from "react-router-dom";
+import { MoviesWrapper } from "./MovieFilter";
 import styled from "styled-components";
 import { LogoComponent } from "./LogoComponent";
 
@@ -44,17 +44,13 @@ export const Recommended = () => {
         {movies.length > 0 && (
           <div className="movies">
             {movies.map((movie) => (
-              <CoverWrapper key={movie.id}>
-                <Link className="links" to={`/movie/${movie.id}`}>
-                  <div class="cover">
-                    <img className="thumbnail" src={movie.thumbnail}></img>
-                  </div>
-                  <div className="title">
-                    <span className="span_overflow">{movie.title}</span>
-                    <span>{movie.year}</span>
-                  </div>
-                </Link>
-              </CoverWrapper>
+              <CoverWrapper
+                key={movie.id}
+                redirect={movie.id}
+                thumbnail={movie.thumbnail}
+                title={movie.title}
+                year={movie.year}
+              />
             ))}
           </div>
         )}
