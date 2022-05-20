@@ -1,8 +1,7 @@
 import React from "react";
-import { Home, HomeWrapper } from "./Home";
+import { HomeWrapper } from "./Home";
 import { useState, useEffect } from "react";
 import { useRef } from "react";
-import { ButtonMenu } from "./ButtonMenu";
 import styled from "styled-components";
 import { LogoComponent } from "./LogoComponent";
 
@@ -87,9 +86,6 @@ export const Credits = () => {
       clearTimeout(timeoutRef.current);
     }
   };
-  // const NextTypeHandler = () => {
-  //   SetIndex((index) => (index + 1) % Object.keys(items).length);
-  // };
   useEffect(() => {
     resetTimeout();
     timeoutRef.current = setTimeout(
