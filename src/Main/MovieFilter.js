@@ -1,7 +1,6 @@
 import React from "react";
 import { HomeWrapper } from "./Home";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { LogoComponent } from "./LogoComponent";
 import { CoverWrapper } from "./CoverWrapper";
@@ -88,7 +87,7 @@ export const MovieFilter = ({
       <LogoComponent />
       <MovieFilterHeader>
         <h1>{movieFilterHeader}</h1>
-        <img className="back_image" src={backImage}></img>
+        <img className="back_image" src={backImage} alt="back"></img>
         <span className="type_of_filter">{typeOfFilter}</span>
       </MovieFilterHeader>
       <MovieFilterWrapper>

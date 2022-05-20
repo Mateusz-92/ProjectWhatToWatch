@@ -96,7 +96,7 @@ export const Credits = () => {
     return () => {
       resetTimeout();
     };
-  }, [index]);
+  }, [items]);
   return (
     <HomeWrapper>
       <LogoComponent />

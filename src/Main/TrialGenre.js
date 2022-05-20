@@ -97,12 +97,12 @@ export const Genres = ({
       <LogoComponent />
       <MovieFilterHeader>
         <h1>{movieFilterHeader}</h1>
-        <img className="back_image" src={backImage}></img>
+        <img className="back_image" src={backImage} alt="back"></img>
       </MovieFilterHeader>
       <DropDownContainer>
         <DropDownHeader onClick={toggling}>
           {selectedOption || [startOption]}
-          <img src="/images/arrow_down.png"></img>
+          <img src="/images/arrow_down.png" alt="arrow"></img>
         </DropDownHeader>
         {isOpen && (
           <DropDownListContainer>

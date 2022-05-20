@@ -25,22 +25,22 @@ export const ButtonMenu = () => {
     <Buttons>
       <Link to="/" style={linkStyle}>
         <button>
-          <img src="/images/home.png" />
+          <img src="/images/home.png" alt="home" />
         </button>
       </Link>
       <Link to="/ourfavourites" style={linkStyle}>
         <button>
-          <img src="/images/favourite.png" />
+          <img src="/images/favourite.png" alt="favourite" />
         </button>
       </Link>
       <Link to="/funfacts" style={linkStyle}>
         <button>
-          <img src="/images/funfact.png" />
+          <img src="/images/funfact.png" alt="funfact" />
         </button>
       </Link>
       <Link to="/Credits" style={linkStyle}>
         <button>
-          <img src="/images/person.png" />
+          <img src="/images/person.png" alt="person" />
         </button>
       </Link>
     </Buttons>

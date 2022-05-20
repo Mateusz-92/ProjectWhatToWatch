@@ -1,11 +1,9 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { fetchRandomFunFact } from "../Api/Movies";
-import { ButtonMenu } from "./ButtonMenu";
 import { MovieDetailsWrapper } from "./MovieDetailsWrapper";
 import { HomeWrapper } from "./Home";
 import styled from "styled-components";
-import { MoviesCategory } from "./MoviesCategory";
 import { LogoComponent } from "./LogoComponent";
 import { MovieTile } from "./MovieTile";
 import { Wrapper } from "./tmp";
@@ -54,7 +52,7 @@ export const InterestingMoviesFacts = () => {
           <button onClick={fetchHandler} className="btn">
             Losuj
           </button>
-          {fact.relatedMovies.length > 0 && <Header>Proponowane</Header>}
+          {fact.relatedMovies?.length > 0 && <Header>Proponowane</Header>}
           <Wrapper>
             {fact.relatedMovies?.map((movie) => (
               <MovieTile

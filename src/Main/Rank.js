@@ -1,6 +1,5 @@
 import React from "react";
 import { MovieFilter } from "./MovieFilter";
-import { ButtonMenu } from "./ButtonMenu";
 import { getMovieByTag } from "../Api/Movies";
 
 export const Rank = () => {

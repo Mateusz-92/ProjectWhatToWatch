@@ -4,25 +4,9 @@ import { HomeWrapper } from "./Home";
 import { ButtonMenu } from "./ButtonMenu";
 import { Carousel } from "./Carousel";
 import { LogoComponent } from "./LogoComponent";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 
-const Shortcuts = styled.div`
-  background-color: #3e3134;
-  height: 5rem;
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  position: fixed;
-  bottom: 0px;
-  margin-top: 0.5em;
-
-  button {
-    background-color: #3e3134;
-    border: none;
-    padding: 0px;
-  }
-`;
 const QuestionMark = styled.div`
   max-width: 60%;
   position: absolute;
@@ -30,7 +14,8 @@ const QuestionMark = styled.div`
   right: 0;
   z-index: 1;
   @media (min-width: 400px) {
-    max-width: 30%;
+    max-width: 20%;
+    left: 60%;
   }
   img {
     max-width: 90%;
@@ -83,9 +68,6 @@ const QuestionHeader = styled.h2`
   margin-bottom: 1em;
   z-index: 10;
 `;
-const linkStyle = {
-  display: "flex",
-};
 const MoviesCategoryWrapper = styled(HomeWrapper)`
   display: flex;
   flex-direction: column;
@@ -105,7 +87,7 @@ export const MoviesCategory = (props) => {
           <LogoComponent></LogoComponent>
         </HeaderWrapper>
         <ListButton onClick={toggleChanged}>
-          <img src="/images/list.png" />
+          <img src="/images/list.png" alt="list" />
         </ListButton>
         {toggle && (
           <List onClick={toggleChanged}>
@@ -132,7 +114,7 @@ export const MoviesCategory = (props) => {
           Według jakiej <br></br> kategorii szukasz <br></br> filmu?
         </QuestionHeader>
         <QuestionMark>
-          <img src="/images/question_mark.png" />
+          <img src="/images/question_mark.png" alt="question" />
         </QuestionMark>
         <Carousel />
         <ButtonMenu />

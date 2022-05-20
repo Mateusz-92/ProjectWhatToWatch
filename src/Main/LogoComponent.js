@@ -23,7 +23,7 @@ export const LogoComponent = () => {
   return (
     <Link to="/">
       <Logo>
-        <img src="/images/logo.png" />
+        <img src="/images/logo.png" alt="logo" />
         <span>WHAT TO WHATCH</span>
       </Logo>
     </Link>

@@ -30,7 +30,7 @@ export const Tmp = (props) => {
 
   useEffect(() => {
     getRandomSuggestedMovie(props.id).then((data) => setMovie(data));
-  }, []);
+  }, [props.id]);
   return (
     <div>
       <Header>Proponowane</Header>

@@ -1,4 +1,4 @@
-import React, { useState, TouchEvent } from "react";
+import React, { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import styled from "styled-components";
 
@@ -140,7 +140,11 @@ export const Carousel = (props) => {
           <ButtonLeft onClick={PrevTypeHandler} />
           <ButtonRight onClick={NextTypeHandler} />
           <Link className="links" to={items[index].redirect}>
-            <img className="picture" src={items[index].image}></img>
+            <img
+              className="picture"
+              src={items[index].image}
+              alt={items[index].name}
+            ></img>
             <span>{items[index].name}</span>
           </Link>
           <Outlet />

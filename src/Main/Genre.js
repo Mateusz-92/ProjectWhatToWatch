@@ -1,7 +1,6 @@
 import React from "react";
 import { MovieFilter } from "./MovieFilter";
 import { getMovieByTag } from "../Api/Movies";
-import { ButtonMenu } from "./ButtonMenu";
 
 export const Genre = () => {
   const dataList = [

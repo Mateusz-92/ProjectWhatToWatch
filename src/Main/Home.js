@@ -94,9 +94,9 @@ export const Home = (props) => {
       <Outlet />
       <ImageContent>
         <CameraWrapper>
-          <img className="camera" src="/images/camera2.png" />
-          <img className="s_rol" src="/images/s_rol.png" />
-          <img className="b_rol" src="/images/b_rol.png" />
+          <img className="camera" src="/images/camera2.png" alt="camera" />
+          <img className="s_rol" src="/images/s_rol.png" alt="scroll" />
+          <img className="b_rol" src="/images/b_rol.png" alt="scroll" />
         </CameraWrapper>
         <LightWrapper>
           <Image src="images/light.png" />
