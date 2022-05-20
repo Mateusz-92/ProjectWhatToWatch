@@ -1,6 +1,6 @@
 {
   "homepage": "https://Mateusz-92.github.io/ProjectWhatToWatch/",
-  "proxy": "http://localhost:5000",
+  "proxy": "http://localhost:3000",
   "name": "whattowwatch",
   "version": "0.1.0",
   "private": true,
