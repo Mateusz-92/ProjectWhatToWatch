@@ -54,7 +54,7 @@ export const InterestingMoviesFacts = () => {
           <button onClick={fetchHandler} className="btn">
             Losuj
           </button>
-          <Header>Proponowane</Header>
+          {fact.relatedMovies.length > 0 && <Header>Proponowane</Header>}
           <Wrapper>
             {fact.relatedMovies?.map((movie) => (
               <MovieTile
