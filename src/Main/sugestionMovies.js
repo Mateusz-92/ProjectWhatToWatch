@@ -1,6 +1,5 @@
 import React from "react";
 import { getMovieByTag } from "../Api/Movies";
-import { ButtonMenu } from "./ButtonMenu";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
@@ -10,24 +9,19 @@ const Wrapper = styled.div`
   grid-template-columns: 33% 33% 33%;
   text-align: center;
   color: black;
-  
-  
+
   h3 {
     text-transform: uppercase;
   }
   .cover {
     height: 80%;
-    max-height: 165px ;
-    @media (min-width: 768px) {
-      max-height: 70%;
-    }
+    max-height: 165px;
   }
 `;
 const SugestionMoviesWrapper = styled.div`
-  margin-top: 0.5rem;
+  margin-top: 10px;
   height: 80%;
-  width: 100%; 
- 
+  width: 100%;
 
   div {
     width: 95%;
@@ -87,11 +81,11 @@ export const SugestionMovies = ({}) => {
                 </StyledLink>
               </SugestionMoviesWrapper>
             ))
-            .sort(() => 0.5 - Math.random()).slice(0, 3)}
-            {/* // .Math.floor(Math.random() * movies.length).slice(0,3)} */}
+            .sort(() => 0.5 - Math.random())
+            .slice(0, 3)}
+          {/* // .Math.floor(Math.random() * movies.length).slice(0,3)} */}
         </Wrapper>
       )}
-      
     </>
   );
 };

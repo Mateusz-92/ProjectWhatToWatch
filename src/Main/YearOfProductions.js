@@ -1,5 +1,4 @@
 import { getMovieByDecade } from "../Api/Movies";
-import { ButtonMenu } from "./ButtonMenu";
 import { MovieFilter } from "./MovieFilter";
 
 export const YearOfProductions = () => {
@@ -9,8 +8,8 @@ export const YearOfProductions = () => {
       queryValue: "1910",
     },
     {
-      name: "20", // wartość diva
-      queryValue: "1920", // wykonać dla każej dekady
+      name: "20",
+      queryValue: "1920",
     },
     {
       name: "30",
@@ -46,15 +45,13 @@ export const YearOfProductions = () => {
     },
   ];
   return (
-    <>
     <MovieFilter
       dataList={dataList}
       handler={getMovieByDecade}
       movieFilterHeader={"Lata Produkcji"}
       typeOfFilter={"XX i XXI"}
       backImage={"/images/clock.png"}
+      years="XX"
     ></MovieFilter>
-    <ButtonMenu/>
-    </>
   );
 };

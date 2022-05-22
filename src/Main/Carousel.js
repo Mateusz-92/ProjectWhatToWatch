@@ -1,4 +1,4 @@
-import React, { useState, TouchEvent } from "react";
+import React, { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import styled from "styled-components";
 
@@ -7,9 +7,7 @@ const TypeOfSearch = styled.div`
   background-color: #f8c317;
   box-sizing: border-box;
   position: relative;
-  overflow: hidden;
-  margin-bottom: 3rem;
-  height: 100%;
+  height: 95%;
 `;
 
 const ButtonLeft = styled.button`
@@ -41,10 +39,11 @@ const ButtonRight = styled.button`
   right: 10px;
   background-color: #ffd756;
   border-right: #ffd756;
+  z-index: 3;
 `;
 const ActuallType = styled.div`
   width: 70%;
-  height: 75%;
+  height: 100%;
   background-color: #ffd756;
   position: relative;
   left: 50%;
@@ -81,9 +80,9 @@ const ActuallType = styled.div`
 export const Carousel = (props) => {
   const items = [
     {
-      name: "Gatunek",
-      redirect: "/genres",
-      image: "/images/genre.png",
+      name: "Ranking",
+      redirect: "/trial2",
+      image: "/images/rank.png",
     },
     {
       name: "Rok produkcji",
@@ -95,15 +94,16 @@ export const Carousel = (props) => {
       redirect: "/ourfavourites",
       image: "/images/recommended.png",
     },
+
+    {
+      name: "Gatunek",
+      redirect: "/trial",
+      image: "/images/genre.png",
+    },
     {
       name: "Losowy",
       redirect: "/random",
       image: "/images/select_tag.png",
-    },
-    {
-      name: "Ranking",
-      redirect: "/rank",
-      image: "/images/rank.png",
     },
   ];
 
@@ -127,7 +127,11 @@ export const Carousel = (props) => {
           <ButtonLeft onClick={PrevTypeHandler} />
           <ButtonRight onClick={NextTypeHandler} />
           <Link className="links" to={items[index].redirect}>
-            <img className="picture" src={items[index].image}></img>
+            <img
+              className="picture"
+              src={items[index].image}
+              alt={items[index].name}
+            ></img>
             <span>{items[index].name}</span>
           </Link>
           <Outlet />

@@ -35,5 +35,11 @@ export const fetchRandomFunFact = () => {
   return api.get("funfact/random");
 };
 export const getRandomSuggestedMovie = (id) => {
-  return api.get(`movie/${id}/suggestions`)
+  return api.get(`movie/${id}/suggestions`);
+};
+export const getGenres = () => {
+  return api.get("genres");
+};
+export const getLists = () => {
+  return api.get("lists");
 };

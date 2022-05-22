@@ -1,33 +1,16 @@
-import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-const Wrapper = styled.div`
-  display: grid;
-  grid-template-columns: 33% 33% 33%;
-  text-align: center;
-  color: black;
-  
-  
-  h3 {
-    text-transform: uppercase;
-  }
-  .cover {
-    height: 80%;
-    max-height: 165px ;
-    @media (min-width: 768px) {
-      max-height: 70%;
-    }
-  }
-`;
 const SugestionMoviesWrapper = styled.div`
-  margin-top: 0.5rem;
-  height: 80%;
-  width: 100%; 
- 
-
+  height: 75%;
+  width: 100%;
+  margin-top: 20px;
+  @media (min-width: 768px) {
+    width: 80%;
+    margin: 0 auto;
+  }
   div {
-    width: 95%;
+    /* width: 90%; */
     height: 100%;
   }
 
@@ -35,6 +18,7 @@ const SugestionMoviesWrapper = styled.div`
     width: 100%;
     height: 100%;
     border-radius: 8px;
+    min-height: 150px;
   }
   .links {
     text-decoration: none;
@@ -45,24 +29,63 @@ const SugestionMoviesWrapper = styled.div`
   }
   span {
     display: block;
+    font-size: 17px;
+    font-weight: bold;
+    display: -webkit-box;
+    /* margin: 0 auto; */
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  h3 {
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  .cover {
+    height: 100%;
+    /* max-height: 175px; */
+    /* width: 100%; */
+    margin: auto auto;
+
+    @media (min-width: 768px) {
+    }
+  }
+`;
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: #3e3134;
+  &:focus,
+  &:hover,
+  &:visited,
+  &:link,
+  &:active {
+    text-decoration: none;
   }
 `;
 
 export const MovieTile = (props) => {
-          return (
-            
-              <SugestionMoviesWrapper>
-                  <Link to={`/movie/${props.redirect}`}>
-                  <div key={props.id}>
-                    <div className="cover">
-                      <img src={props.thumbnail} />
-                    </div>
-                    <span>{props.title}</span>
-                    <span>{props.year}</span>
-                   
-                  </div>
-                  </Link>
-              </SugestionMoviesWrapper> 
-              
-          )}
-
+  const navigate = useNavigate();
+  return (
+    <SugestionMoviesWrapper key={props.id}>
+      <StyledLink
+        to={`/movie/${props.redirect}`}
+        onClick={() => navigate.go(0)}
+      >
+        <div>
+          <div className="cover">
+            <img
+              className="thumbnail"
+              src={
+                props.thumbnail === "" ? "/images/noimg.png" : props.thumbnail
+              }
+              alt="plakat-film"
+            ></img>
+          </div>
+          <span>{props.title}</span>
+          <span>{props.year}</span>
+        </div>
+      </StyledLink>
+    </SugestionMoviesWrapper>
+  );
+};
