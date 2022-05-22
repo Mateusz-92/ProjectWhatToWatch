@@ -30,7 +30,7 @@ const ImageWrapper = styled.div`
     max-height: 365px;
     border-radius: 8px;
     @media (min-width: 768px) {
-      max-height: 400px;
+      max-height: 500px;
       width: 40%;
     }
   }
@@ -77,12 +77,12 @@ export const MovieDetailsWrapper = ({
       <ImageWrapper>
         <img
           className="thumbnail"
-          src={
-            thumbnail === ""
-              ? "https://via.placeholder.com/150x200.png?text=No+Image+Found"
-              : thumbnail
-          }
+          src={thumbnail === "" ? "/images/noimg.png" : thumbnail}
           alt="plakat-film"
+          onError={({ currentTarget }) => {
+            currentTarget.onerror = null;
+            currentTarget.src = "/images/noimg.png";
+          }}
         ></img>
       </ImageWrapper>
       <div className="cover">
@@ -92,7 +92,6 @@ export const MovieDetailsWrapper = ({
         </Header>
         <Genres>
           <span>{genres}</span>
-          {/* <span>{[`${movie.genres}`]}> */}
           <span>{country}</span>
         </Genres>
       </div>

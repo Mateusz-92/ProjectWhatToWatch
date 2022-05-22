@@ -7,8 +7,7 @@ const TypeOfSearch = styled.div`
   background-color: #f8c317;
   box-sizing: border-box;
   position: relative;
-  overflow: hidden;
-  height: 100%;
+  height: 95%;
 `;
 
 const ButtonLeft = styled.button`
@@ -44,14 +43,11 @@ const ButtonRight = styled.button`
 `;
 const ActuallType = styled.div`
   width: 70%;
-  height: 75%;
+  height: 100%;
   background-color: #ffd756;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  @media (min-width: 400px) {
-    height: 100%;
-  }
 
   .picture {
     position: absolute;
@@ -83,11 +79,11 @@ const ActuallType = styled.div`
 `;
 export const Carousel = (props) => {
   const items = [
-    // {
-    //   name: "Gatunek",
-    //   redirect: "/genres",
-    //   image: "/images/genre.png",
-    // },
+    {
+      name: "Ranking",
+      redirect: "/trial2",
+      image: "/images/rank.png",
+    },
     {
       name: "Rok produkcji",
       redirect: "/year",
@@ -98,25 +94,16 @@ export const Carousel = (props) => {
       redirect: "/ourfavourites",
       image: "/images/recommended.png",
     },
-    {
-      name: "Losowy",
-      redirect: "/random",
-      image: "/images/select_tag.png",
-    },
-    // {
-    //   name: "Ranking",
-    //   redirect: "/rank",
-    //   image: "/images/rank.png",
-    // },
+
     {
       name: "Gatunek",
       redirect: "/trial",
       image: "/images/genre.png",
     },
     {
-      name: "Ranking",
-      redirect: "/trial2",
-      image: "/images/rank.png",
+      name: "Losowy",
+      redirect: "/random",
+      image: "/images/select_tag.png",
     },
   ];
 

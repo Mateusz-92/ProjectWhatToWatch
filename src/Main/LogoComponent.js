@@ -5,7 +5,7 @@ import styled from "styled-components";
 export const LogoComponent = () => {
   const Logo = styled.div`
     position: relative;
-    width: 100px;
+    width: 60px;
     margin-left: 5px;
     color: #3e3134;
 

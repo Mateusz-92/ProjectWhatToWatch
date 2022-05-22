@@ -2,15 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import { blinkingLight, rolls } from "./Animation";
 import { Link, Outlet } from "react-router-dom";
-import { LogoComponent } from "./LogoComponent";
 
 export const HomeWrapper = styled.div`
   background-color: #f8c317;
   color: #3e3134;
-  /* display: flex ;
-  flex-direction: column ; */
   box-sizing: border-box;
-  height: 100vh;
   width: 100%;
   h2 {
     text-align: center;
@@ -20,6 +16,7 @@ export const HomeWrapper = styled.div`
 const ButtonWrapper = styled.button`
   width: 90%;
   height: 5rem;
+  border-color: #3e3134;
   border-radius: 1rem;
   background-color: #3e3134;
   color: #f8c317;
@@ -39,7 +36,7 @@ const ImageContent = styled.div`
   box-sizing: border-box;
   margin-left: 5%;
   margin-top: 2rem;
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   justify-content: center;
 
@@ -81,7 +78,6 @@ const LightWrapper = styled.div`
 export const Home = (props) => {
   return (
     <HomeWrapper>
-      <LogoComponent />
       <div>
         <h2>
           Lubisz stare filmy? <br />

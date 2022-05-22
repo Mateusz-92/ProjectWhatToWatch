@@ -14,24 +14,27 @@ import { Credits } from "./Main/Credits";
 import { RandomMovie } from "./Main/RandomMovie";
 import { TrialGenre } from "./Main/TrialGenre2";
 import { TrialRank } from "./Main/TrialRank";
+import { Layout } from "./Main/Layout";
 
 const rootElement = document.getElementById("root");
 render(
   <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="start" element={<MoviesCategory />} />
-      {/* <Route path="/genres" element={<Genre />} /> */}
-      <Route path="/year" element={<YearOfProductions />} />
-      <Route path="/ourfavourites" element={<Recommended />} />
-      <Route path="/random" element={<RandomMovie />} />
-      <Route path="movie/:id" element={<Movie />} />
-      {/* <Route path="/rank" element={<Rank />} /> */}
-      <Route path="/funfacts" element={<InterestingMoviesFacts />} />
-      <Route path="/credits" element={<Credits />} />
-      <Route path="/trial" element={<TrialGenre />} />
-      <Route path="/trial2" element={<TrialRank />} />
-    </Routes>
+    <Layout>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="start" element={<MoviesCategory />} />
+        {/* <Route path="/genres" element={<Genre />} /> */}
+        <Route path="/year" element={<YearOfProductions />} />
+        <Route path="/ourfavourites" element={<Recommended />} />
+        <Route path="/random" element={<RandomMovie />} />
+        <Route path="movie/:id" element={<Movie />} />
+        {/* <Route path="/rank" element={<Rank />} /> */}
+        <Route path="/funfacts" element={<InterestingMoviesFacts />} />
+        <Route path="/credits" element={<Credits />} />
+        <Route path="/trial" element={<TrialGenre />} />
+        <Route path="/trial2" element={<TrialRank />} />
+      </Routes>
+    </Layout>
   </BrowserRouter>,
   rootElement
 );

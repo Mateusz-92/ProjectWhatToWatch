@@ -3,7 +3,6 @@ import { HomeWrapper } from "./Home";
 import { useState, useEffect } from "react";
 import { useRef } from "react";
 import styled from "styled-components";
-import { LogoComponent } from "./LogoComponent";
 
 const CreditsWrapper = styled.div`
   width: 95%;
@@ -57,25 +56,26 @@ export const Credits = () => {
       name: "Mateusz Zasada",
       contact: "github.com/Mateusz-92",
     },
+
+    {
+      type: "Projekt Graficzny",
+      name: "Paweł Woźniak",
+      contact: "",
+    },
     {
       type: "Backend",
       name: "Marcin Mojski",
-      contact: "x",
-    },
-    {
-      type: "Grafika",
-      name: "y",
-      contact: "y",
+      contact: "github.com/Mojski",
     },
     {
       type: "Code Review #1",
-      name: "z",
-      contact: "z",
+      name: "Miłosz Wodzisz",
+      contact: "github.com/Bendimeth",
     },
     {
       type: "Code Review #2",
-      name: "z",
-      contact: "z",
+      name: "Marcin Żabicki",
+      contact: "github.com/marcinzabicki",
     },
   ];
   const [index, SetIndex] = useState(0);
@@ -99,10 +99,7 @@ export const Credits = () => {
   }, [items]);
   return (
     <HomeWrapper>
-      <LogoComponent />
-
       <CreditsWrapper>
-        <h2>Credits</h2>
         <div className="credits">
           <span className="type">{items[index].type}</span>
           <span className="name">{items[index].name}</span>

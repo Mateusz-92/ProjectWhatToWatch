@@ -3,14 +3,13 @@ import { HomeWrapper } from "./Home";
 import { CoverWrapper } from "./CoverWrapper";
 import { useState, useEffect } from "react";
 import styled from "styled-components";
-import { LogoComponent } from "./LogoComponent";
 import { MovieFilterHeader } from "./MovieFilter";
 import { MoviesWrapper } from "./MovieFilter";
 
 const DropDownContainer = styled("div")`
   width: 90%;
   margin: 0 auto;
-  margin-top: 100px;
+  margin-top: 200px;
   margin-bottom: 20px;
   font-size: 12px;
   background-color: #e8b718;
@@ -21,7 +20,9 @@ const DropDownContainer = styled("div")`
 const DropDownHeader = styled("div")`
   padding: 0.4em 2em 0.4em 1em;
   font-weight: 500;
+  font-size: 18px;
   position: relative;
+  cursor: pointer;
   img {
     height: 10px;
     position: absolute;
@@ -32,10 +33,12 @@ const DropDownHeader = styled("div")`
 `;
 
 const DropDownListContainer = styled("div")`
-  max-height: 110px;
+  max-height: 170px;
   overflow: scroll;
   border-radius: 0 0 8px 8px;
   margin-bottom: 5px;
+  font-size: 18px;
+  cursor: pointer;
   ::-webkit-scrollbar {
     display: none;
   }
@@ -94,7 +97,6 @@ export const Genres = ({
 
   return (
     <HomeWrapper>
-      <LogoComponent />
       <MovieFilterHeader>
         <h1>{movieFilterHeader}</h1>
         <img className="back_image" src={backImage} alt="back"></img>
@@ -127,7 +129,6 @@ export const Genres = ({
             ?.description
         }
       </ListDescription>
-      {/* <span>{genres[1]?.description}</span> */}
       <MoviesWrapper>
         {movies.length > 0 && (
           <div className="movies">

@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
   color: black;
   width: 90%;
   margin: 0 auto;
-  margin-top: 5px;
+  margin-top: 10px;
   @media (min-width: 768px) {
     grid-template-columns: 32% 32% 32%;
     grid-column-gap: 2%;
@@ -30,7 +30,7 @@ export const Tmp = (props) => {
 
   useEffect(() => {
     getRandomSuggestedMovie(props.id).then((data) => setMovie(data));
-  }, [props.id]);
+  }, []);
   return (
     <div>
       <Header>Proponowane</Header>

@@ -2,7 +2,6 @@ import React from "react";
 import { HomeWrapper } from "./Home";
 import { useState } from "react";
 import styled from "styled-components";
-import { LogoComponent } from "./LogoComponent";
 import { CoverWrapper } from "./CoverWrapper";
 
 export const MovieFilterHeader = styled.div`
@@ -72,7 +71,6 @@ export const MovieFilter = ({
   typeOfFilter,
   backImage,
 }) => {
-  console.log("MovieFilter", dataList, handler);
   const [movies, setMovies] = useState([]);
   const [selectedValue, setSelectedValue] = useState("");
 
@@ -84,7 +82,6 @@ export const MovieFilter = ({
   };
   return (
     <HomeWrapper>
-      <LogoComponent />
       <MovieFilterHeader>
         <h1>{movieFilterHeader}</h1>
         <img className="back_image" src={backImage} alt="back"></img>

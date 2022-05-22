@@ -1,6 +1,5 @@
 import React from "react";
 import { getMovieByTag } from "../Api/Movies";
-import { ButtonMenu } from "./ButtonMenu";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
@@ -20,7 +19,7 @@ const Wrapper = styled.div`
   }
 `;
 const SugestionMoviesWrapper = styled.div`
-  margin-top: 0.5rem;
+  margin-top: 10px;
   height: 80%;
   width: 100%;
 

@@ -9,7 +9,7 @@ export const TrialRank = () => {
       fetch={getLists}
       handler={getMovieByTag}
       movieFilterHeader={"Listy Rankingowe"}
-      backImage={"/images/genre2.png"}
+      backImage={"/images/rank2.png"}
       startOption={"Lista"}
     ></Genres>
   );

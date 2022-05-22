@@ -4,7 +4,6 @@ import { fetchRandomFunFact } from "../Api/Movies";
 import { MovieDetailsWrapper } from "./MovieDetailsWrapper";
 import { HomeWrapper } from "./Home";
 import styled from "styled-components";
-import { LogoComponent } from "./LogoComponent";
 import { MovieTile } from "./MovieTile";
 import { Wrapper } from "./tmp";
 import { Header } from "./tmp";
@@ -12,11 +11,16 @@ import { Header } from "./tmp";
 export const MovieDetailWrapper = styled.div`
   width: 90%;
   margin: 0 auto;
+`;
+export const BtnWrapper = styled.div`
+  width: 100%;
+  padding-bottom: 20px;
 
   .btn {
     width: 100%;
     height: 4rem;
     border-radius: 1rem;
+    border-color: #3e3134;
     background-color: #3e3134;
     margin: 0 auto;
     text-transform: uppercase;
@@ -42,16 +46,17 @@ export const InterestingMoviesFacts = () => {
   return (
     <>
       <HomeWrapper>
-        <LogoComponent />
         <MovieDetailWrapper>
           <MovieDetailsWrapper
             thumbnail={cover}
             title={fact.title}
             description={fact.content}
           ></MovieDetailsWrapper>
-          <button onClick={fetchHandler} className="btn">
-            Losuj
-          </button>
+          <BtnWrapper>
+            <button onClick={fetchHandler} className="btn">
+              Losuj
+            </button>
+          </BtnWrapper>
           {fact.relatedMovies?.length > 0 && <Header>Proponowane</Header>}
           <Wrapper>
             {fact.relatedMovies?.map((movie) => (

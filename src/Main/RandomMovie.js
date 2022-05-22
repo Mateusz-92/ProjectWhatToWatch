@@ -1,25 +1,43 @@
 import { useState, useEffect } from "react";
 import { MovieDetailsWrapper } from "./MovieDetailsWrapper";
 import { fetchRandomMovie } from "../Api/Movies";
+import { HomeWrapper } from "./Home";
+import { BtnWrapper } from "./InterestingMoviesFacts";
+import styled from "styled-components";
+
+const Btn = styled(BtnWrapper)`
+  width: 95%;
+  margin: 0 auto;
+`;
 
 export const RandomMovie = () => {
   const [movie, setRandom] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-  useEffect(() => {
+  const RandomHandler = () => {
     fetchRandomMovie().then((data) => {
       setIsLoading(false);
       setRandom(data);
     });
+  };
+  useEffect(() => {
+    RandomHandler();
   }, []);
   if (isLoading) return <h1>...loading</h1>;
   return (
-    <MovieDetailsWrapper
-      thumbnail={movie.thumbnail}
-      year={movie.year}
-      title={movie.title}
-      genres={[`${movie.genres}`]}
-      country={movie.country}
-      description={movie.description}
-    />
+    <HomeWrapper>
+      <MovieDetailsWrapper
+        thumbnail={movie.thumbnail}
+        year={movie.year}
+        title={movie.title}
+        genres={[`${movie.genres}`]}
+        country={movie.country}
+        description={movie.description}
+      />
+      <Btn>
+        <button onClick={RandomHandler} className="btn">
+          Losuj
+        </button>
+      </Btn>
+    </HomeWrapper>
   );
 };

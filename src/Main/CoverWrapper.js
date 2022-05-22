@@ -12,12 +12,15 @@ const Wrapper = styled.div`
     font-size: larger;
     font-weight: 600;
     color: #3e3134;
-    /* height: 20%; */
   }
   .cover {
     width: 100%;
     height: 75%;
     max-height: 283.16px;
+    @media (min-width: 768px) {
+      height: 100%;
+      max-height: 400px;
+    }
   }
   .thumbnail {
     width: 100%;
@@ -49,11 +52,7 @@ export const CoverWrapper = ({ redirect, thumbnail, title, year }) => {
         <div className="cover">
           <img
             className="thumbnail"
-            src={
-              thumbnail === ""
-                ? "https://via.placeholder.com/150x200.png?text=No+Image+Found"
-                : thumbnail
-            }
+            src={thumbnail === "" ? "/images/noimg.png" : thumbnail}
             alt="plakat-film"
           ></img>
         </div>

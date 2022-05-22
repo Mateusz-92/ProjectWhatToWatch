@@ -2,12 +2,15 @@ import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
 
 const SugestionMoviesWrapper = styled.div`
-  margin-top: 5px;
-  height: 80%;
+  height: 75%;
   width: 100%;
-
+  margin-top: 20px;
+  @media (min-width: 768px) {
+    width: 80%;
+    margin: 0 auto;
+  }
   div {
-    width: 90%;
+    /* width: 90%; */
     height: 100%;
   }
 
@@ -15,6 +18,7 @@ const SugestionMoviesWrapper = styled.div`
     width: 100%;
     height: 100%;
     border-radius: 8px;
+    min-height: 150px;
   }
   .links {
     text-decoration: none;
@@ -27,17 +31,24 @@ const SugestionMoviesWrapper = styled.div`
     display: block;
     font-size: 17px;
     font-weight: bold;
+    display: -webkit-box;
+    /* margin: 0 auto; */
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   h3 {
     text-transform: uppercase;
+    margin-bottom: 5px;
   }
   .cover {
     height: 100%;
-    max-height: 175px;
-    width: 100%;
+    /* max-height: 175px; */
+    /* width: 100%; */
+    margin: auto auto;
 
     @media (min-width: 768px) {
-      max-height: 275px;
     }
   }
 `;
@@ -66,9 +77,7 @@ export const MovieTile = (props) => {
             <img
               className="thumbnail"
               src={
-                props.thumbnail === ""
-                  ? "https://via.placeholder.com/150x200.png?text=No+Image+Found"
-                  : props.thumbnail
+                props.thumbnail === "" ? "/images/noimg.png" : props.thumbnail
               }
               alt="plakat-film"
             ></img>

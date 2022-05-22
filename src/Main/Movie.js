@@ -18,11 +18,10 @@ export const Movie = () => {
       setIsLoading(false);
       setMovie(data);
     });
-  }, [id]);
+  }, []);
   if (isLoading) return <div>loading...</div>;
   return (
     <HomeWrapper>
-      <LogoComponent />
       <MovieDetailWrapper>
         <MovieDetailsWrapper
           thumbnail={movie.thumbnail}

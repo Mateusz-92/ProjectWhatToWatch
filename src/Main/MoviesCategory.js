@@ -1,66 +1,23 @@
 import React from "react";
 import styled from "styled-components";
 import { HomeWrapper } from "./Home";
-import { ButtonMenu } from "./ButtonMenu";
 import { Carousel } from "./Carousel";
-import { LogoComponent } from "./LogoComponent";
-import { Link } from "react-router-dom";
-import { useState } from "react";
 
 const QuestionMark = styled.div`
-  max-width: 60%;
   position: absolute;
   top: 3rem;
-  right: 0;
+  right: 20px;
   z-index: 1;
   @media (min-width: 400px) {
-    max-width: 20%;
+    max-width: 100%;
     left: 60%;
   }
-  img {
-    max-width: 90%;
-  }
-`;
-const ListButton = styled.button`
-  background-color: #f8c317;
-  border: none;
-  position: absolute;
-  top: 1px;
-  right: 0.25em;
-  img {
-    z-index: 2;
-  }
-`;
-const List = styled.div`
-  position: absolute;
-  width: 150px;
-  top: 1px;
-  right: 3.35em;
-  background-color: #3e3134;
-  color: #f8c317;
-  z-index: 0;
-  display: flex;
-  justify-content: start;
-  border-radius: 5%;
-  z-index: 3;
 
-  ul {
-    list-style-type: none;
-  }
-
-  .links {
-    text-decoration: none;
-    color: #3e3134;
-    color: #f8c317;
-    &:focus,
-    &:hover,
-    &:visited,
-    &:link,
-    &:active {
-      text-decoration: none;
-    }
+  img {
+    height: 200px;
   }
 `;
+
 const QuestionHeader = styled.h2`
   text-align: center;
   color: #3e3134;
@@ -71,54 +28,23 @@ const QuestionHeader = styled.h2`
 const MoviesCategoryWrapper = styled(HomeWrapper)`
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 65vh;
   position: relative;
 `;
 const HeaderWrapper = styled.div`
   position: relative;
 `;
 export const MoviesCategory = (props) => {
-  const [toggle, setToggle] = useState(false);
-  const toggleChanged = () => setToggle(!toggle);
   return (
-    <div>
-      <MoviesCategoryWrapper>
-        <HeaderWrapper>
-          <LogoComponent></LogoComponent>
-        </HeaderWrapper>
-        <ListButton onClick={toggleChanged}>
-          <img src="/images/list.png" alt="list" />
-        </ListButton>
-        {toggle && (
-          <List onClick={toggleChanged}>
-            <ul>
-              <li>
-                <Link className="links" to="/">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link className="links" to="/funfacts">
-                  Ciekawostki
-                </Link>
-              </li>
-              <li>
-                <Link className="links" to="/Credits">
-                  O aplikacji
-                </Link>
-              </li>
-            </ul>
-          </List>
-        )}
-        <QuestionHeader>
-          Według jakiej <br></br> kategorii szukasz <br></br> filmu?
-        </QuestionHeader>
-        <QuestionMark>
-          <img src="/images/question_mark.png" alt="question" />
-        </QuestionMark>
-        <Carousel />
-        <ButtonMenu />
-      </MoviesCategoryWrapper>
-    </div>
+    <MoviesCategoryWrapper>
+      <HeaderWrapper></HeaderWrapper>
+      <QuestionHeader>
+        Według jakiej <br></br> kategorii szukasz <br></br> filmu?
+      </QuestionHeader>
+      <QuestionMark>
+        <img src="/images/question_mark.png" alt="question" />
+      </QuestionMark>
+      <Carousel />
+    </MoviesCategoryWrapper>
   );
 };

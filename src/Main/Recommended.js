@@ -5,7 +5,6 @@ import { getMovieByTag } from "../Api/Movies";
 import { HomeWrapper } from "./Home";
 import { MoviesWrapper } from "./MovieFilter";
 import styled from "styled-components";
-import { LogoComponent } from "./LogoComponent";
 
 const Header = styled.div`
   margin-left: 2.5%;
@@ -33,7 +32,6 @@ export const Recommended = () => {
   }, []);
   return (
     <HomeWrapper>
-      <LogoComponent />
       <Header>
         <h1>Polecamy do oglądania</h1>
         <div>
