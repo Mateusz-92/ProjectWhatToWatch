@@ -26,6 +26,10 @@ const ButtonWrapper = styled.button`
   transform: translateX(-50%);
   text-transform: uppercase;
   margin: 1em 0em 1em;
+  @media (min-width: 768px) {
+    width: 50%;
+    margin: 0 auto;
+  }
 `;
 const Image = styled.img`
   animation: ${blinkingLight} 1.5s linear infinite;

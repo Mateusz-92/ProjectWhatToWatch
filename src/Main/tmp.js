@@ -14,7 +14,7 @@ export const Wrapper = styled.div`
   margin: 0 auto;
   margin-top: 10px;
   @media (min-width: 768px) {
-    grid-template-columns: 32% 32% 32%;
+    grid-template-columns: 25% 25% 25% 25%;
     grid-column-gap: 2%;
   }
 `;

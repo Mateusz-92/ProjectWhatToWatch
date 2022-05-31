@@ -4,7 +4,6 @@ import { getMovieById } from "../Api/Movies";
 import { MovieDetailWrapper } from "./InterestingMoviesFacts";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { LogoComponent } from "./LogoComponent";
 import { Tmp } from "./tmp";
 import { MovieDetailsWrapper } from "./MovieDetailsWrapper";
 

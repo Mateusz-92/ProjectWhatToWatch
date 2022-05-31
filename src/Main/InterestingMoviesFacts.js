@@ -6,7 +6,6 @@ import { HomeWrapper } from "./Home";
 import styled from "styled-components";
 import { MovieTile } from "./MovieTile";
 import { Wrapper } from "./tmp";
-import { Header } from "./tmp";
 
 export const MovieDetailWrapper = styled.div`
   width: 90%;
@@ -15,6 +14,10 @@ export const MovieDetailWrapper = styled.div`
 export const BtnWrapper = styled.div`
   width: 100%;
   padding-bottom: 20px;
+  @media (min-width: 768px) {
+    width: 50%;
+    margin: 0 auto;
+  }
 
   .btn {
     width: 100%;
@@ -25,7 +28,7 @@ export const BtnWrapper = styled.div`
     margin: 0 auto;
     text-transform: uppercase;
     color: #f8c317;
-    margin-bottom: 2.5%;
+    margin-bottom: 1.5%;
   }
 `;
 
@@ -56,8 +59,13 @@ export const InterestingMoviesFacts = () => {
             <button onClick={fetchHandler} className="btn">
               Losuj
             </button>
+            {fact.link?.length > 0 && (
+              <a href={fact.link} target="_blank" rel="noreferrer">
+                <button className="btn">Zobacz Więcej</button>
+              </a>
+            )}
           </BtnWrapper>
-          {fact.relatedMovies?.length > 0 && <Header>Proponowane</Header>}
+
           <Wrapper>
             {fact.relatedMovies?.map((movie) => (
               <MovieTile

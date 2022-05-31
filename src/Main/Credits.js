@@ -54,7 +54,7 @@ export const Credits = () => {
     {
       type: "Frontend",
       name: "Mateusz Zasada",
-      contact: "github.com/Mateusz-92",
+      contact: "github.com/mateusz-92",
     },
 
     {
@@ -63,14 +63,14 @@ export const Credits = () => {
       contact: "",
     },
     {
-      type: "Backend",
+      type: "Web Api",
       name: "Marcin Mojski",
-      contact: "github.com/Mojski",
+      contact: "",
     },
     {
       type: "Code Review #1",
       name: "Miłosz Wodzisz",
-      contact: "github.com/Bendimeth",
+      contact: "github.com/bendimeth",
     },
     {
       type: "Code Review #2",
@@ -80,7 +80,7 @@ export const Credits = () => {
   ];
   const [index, SetIndex] = useState(0);
   const timeoutRef = useRef(null);
-  const delay = 4000;
+  const delay = 2000;
   const resetTimeout = () => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);

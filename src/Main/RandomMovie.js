@@ -8,6 +8,10 @@ import styled from "styled-components";
 const Btn = styled(BtnWrapper)`
   width: 95%;
   margin: 0 auto;
+  @media (min-width: 768px) {
+    width: 50%;
+    margin: 0 auto;
+  }
 `;
 
 export const RandomMovie = () => {
