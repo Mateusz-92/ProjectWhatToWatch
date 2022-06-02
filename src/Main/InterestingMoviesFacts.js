@@ -6,6 +6,7 @@ import { HomeWrapper } from "./Home";
 import styled from "styled-components";
 import { MovieTile } from "./MovieTile";
 import { Wrapper } from "./tmp";
+import { Header } from "./tmp";
 
 export const MovieDetailWrapper = styled.div`
   width: 90%;
@@ -65,7 +66,7 @@ export const InterestingMoviesFacts = () => {
               </a>
             )}
           </BtnWrapper>
-
+          {fact.relatedMovies?.length > 0 && <Header>Proponowane</Header>}
           <Wrapper>
             {fact.relatedMovies?.map((movie) => (
               <MovieTile

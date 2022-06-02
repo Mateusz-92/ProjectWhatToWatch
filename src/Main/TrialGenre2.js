@@ -6,7 +6,7 @@ import { getGenres } from "../Api/Movies";
 export const TrialGenre = () => {
   return (
     <Genres
-      fetch={getGenres}
+      getFetch={getGenres}
       // dataList={dataList}
       handler={getMovieByTag}
       movieFilterHeader={"Gatunek"}

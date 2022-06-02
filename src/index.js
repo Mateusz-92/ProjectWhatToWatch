@@ -31,8 +31,8 @@ render(
         {/* <Route path="/rank" element={<Rank />} /> */}
         <Route path="/funfacts" element={<InterestingMoviesFacts />} />
         <Route path="/credits" element={<Credits />} />
-        <Route path="/trial" element={<TrialGenre />} />
-        <Route path="/trial2" element={<TrialRank />} />
+        <Route path="/genres" element={<TrialGenre />} />
+        <Route path="/rank" element={<TrialRank />} />
       </Routes>
     </Layout>
   </BrowserRouter>,

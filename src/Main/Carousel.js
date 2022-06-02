@@ -83,7 +83,7 @@ export const Carousel = (props) => {
   const items = [
     {
       name: "Ranking",
-      redirect: "/trial2",
+      redirect: "/rank",
       image: "/images/rank.png",
     },
     {
@@ -99,7 +99,7 @@ export const Carousel = (props) => {
 
     {
       name: "Gatunek",
-      redirect: "/trial",
+      redirect: "/genres",
       image: "/images/genre.png",
     },
     {

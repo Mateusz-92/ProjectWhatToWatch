@@ -63,6 +63,19 @@ const Header = styled.div`
     font-weight: 1000;
   }
 `;
+const VodWrapper = styled.div`
+  display: flex;
+  margin-top: 15px;
+  @media (min-width: 768px) {
+    justify-content: center;
+  }
+  .vod {
+    padding: 2px;
+  }
+  img {
+    max-width: 100%;
+  }
+`;
 
 export const MovieDetailsWrapper = ({
   thumbnail,
@@ -71,6 +84,7 @@ export const MovieDetailsWrapper = ({
   genres,
   country,
   description,
+  vod,
 }) => {
   return (
     <Wrapper>
@@ -95,6 +109,15 @@ export const MovieDetailsWrapper = ({
           <span>{country}</span>
         </Genres>
       </div>
+      {vod?.length > 0 && (
+        <VodWrapper>
+          {vod.map((item) => (
+            <div className="vod" key={item}>
+              <img src={`/images/vod/${item}.png `} alt="vod" />
+            </div>
+          ))}
+        </VodWrapper>
+      )}
       <Description>
         <span>{description}</span>
       </Description>

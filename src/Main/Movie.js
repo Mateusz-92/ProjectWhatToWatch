@@ -12,6 +12,8 @@ export const Movie = () => {
   const [movie, setMovie] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
+  const tmpArray = ["netflix", "player", "amazon", "ninateka"];
+
   useEffect(() => {
     getMovieById(id).then((data) => {
       setIsLoading(false);
@@ -29,6 +31,7 @@ export const Movie = () => {
           genres={[`${movie.genres}`]}
           country={movie.country}
           description={movie.description}
+          vod={tmpArray}
         />
         <Tmp id={id} />
       </MovieDetailWrapper>

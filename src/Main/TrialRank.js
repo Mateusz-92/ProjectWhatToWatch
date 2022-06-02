@@ -6,7 +6,7 @@ import { getLists } from "../Api/Movies";
 export const TrialRank = () => {
   return (
     <Genres
-      fetch={getLists}
+      getFetch={getLists}
       handler={getMovieByTag}
       movieFilterHeader={"Listy Rankingowe"}
       backImage={"/images/rank2.png"}

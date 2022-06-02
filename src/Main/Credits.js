@@ -81,6 +81,7 @@ export const Credits = () => {
   const [index, SetIndex] = useState(0);
   const timeoutRef = useRef(null);
   const delay = 2000;
+
   const resetTimeout = () => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);

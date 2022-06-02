@@ -21,6 +21,7 @@ const DropDownHeader = styled("div")`
   padding: 0.4em 2em 0.4em 1em;
   font-weight: 500;
   font-size: 18px;
+  font-weight: bold;
   position: relative;
   cursor: pointer;
   img {
@@ -50,8 +51,7 @@ const DropDownList = styled("ul")`
   padding-left: 1em;
   background-color: #e8b718;
   box-sizing: border-box;
-
-  font-weight: 500;
+  font-weight: bold;
   &:first-child {
     padding-top: 0.8em;
   }
@@ -59,7 +59,7 @@ const DropDownList = styled("ul")`
 
 const ListItem = styled("li")`
   list-style: none;
-  margin-bottom: 0.8em;
+  margin-bottom: 1em;
 `;
 const ListDescription = styled.div`
   width: 90%;
@@ -72,7 +72,7 @@ export const Genres = ({
   handler,
   movieFilterHeader,
   backImage,
-  fetch,
+  getFetch,
   startOption,
 }) => {
   console.log("MovieFilter", dataList, handler);
@@ -92,7 +92,7 @@ export const Genres = ({
   };
 
   useEffect(() => {
-    fetch().then((data) => SetGenre(data));
+    getFetch().then((data) => SetGenre(data));
   }, []);
 
   return (
