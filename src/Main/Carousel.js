@@ -107,6 +107,11 @@ export const Carousel = (props) => {
       redirect: "/random",
       image: "/images/select_tag.png",
     },
+    {
+      name: "Vod",
+      redirect: "/vod",
+      image: "/images/select_tag.png",
+    },
   ];
 
   const [index, SetIndex] = useState(0);

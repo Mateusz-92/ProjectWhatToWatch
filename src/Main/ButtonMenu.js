@@ -14,12 +14,14 @@ const Buttons = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-evenly;
+
   /* position: -webkit-sticky; */
 
   button {
     background-color: #3e3134;
     border: none;
     padding: 0px;
+    cursor: pointer;
   }
 `;
 const linkStyle = {

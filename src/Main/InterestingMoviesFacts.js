@@ -30,6 +30,7 @@ export const BtnWrapper = styled.div`
     text-transform: uppercase;
     color: #f8c317;
     margin-bottom: 1.5%;
+    cursor: pointer;
   }
 `;
 

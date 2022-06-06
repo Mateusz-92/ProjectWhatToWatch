@@ -8,9 +8,18 @@ export const HomeWrapper = styled.div`
   color: #3e3134;
   box-sizing: border-box;
   width: 100%;
+  h4 {
+    text-align: center;
+    @media (min-width: 768px) {
+      margin-bottom: 25px;
+    }
+  }
   h2 {
     text-align: center;
     margin-left: 2.5%;
+  }
+  .btn_pointer {
+    cursor: pointer;
   }
 `;
 const ButtonWrapper = styled.button`
@@ -89,7 +98,9 @@ export const Home = (props) => {
         </h2>
       </div>
       <Link to="/start">
-        <ButtonWrapper>Rozpocznij wyszukiwanie</ButtonWrapper>
+        <ButtonWrapper className="btn_pointer">
+          Rozpocznij wyszukiwanie
+        </ButtonWrapper>
       </Link>
       <Outlet />
       <ImageContent>
