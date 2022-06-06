@@ -36,6 +36,7 @@ export const RandomMovie = () => {
         genres={[`${movie.genres}`]}
         country={movie.country}
         description={movie.description}
+        vod={movie.vod}
       />
       <Btn>
         <button onClick={RandomHandler} className="btn">
