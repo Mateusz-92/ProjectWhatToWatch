@@ -6,6 +6,32 @@ import { MoviesWrapper } from "./MovieFilter";
 import { CoverWrapper } from "./CoverWrapper";
 import styled from "styled-components";
 
+const VodHeader = styled.div`
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+  @media (min-width: 768px) {
+    margin-bottom: 10rem;
+  }
+  h4 {
+    text-align: center;
+    z-index: 10;
+    position: relative;
+    @media (min-width: 768px) {
+      font-size: 22px;
+    }
+  }
+  img {
+    position: absolute;
+    right: 2.5%;
+    top: 10px;
+    max-width: 60%;
+    opacity: 80%;
+    @media (orientation: landscape) {
+      max-width: 30%;
+    }
+  }
+`;
+
 const VodTileWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -84,9 +110,13 @@ export const Vod = () => {
 
   return (
     <HomeWrapper>
-      <h4>
-        Sprawdź jakie filmy są dostepne na wybranych platformach streamingowych
-      </h4>
+      <VodHeader>
+        <img src={`/images/bcg_vod.png`} alt="vodimg"></img>
+        <h4>
+          Sprawdź jakie filmy są dostepne na wybranych platformach
+          streamingowych
+        </h4>
+      </VodHeader>
       <VodTileWrapper>
         {vodServices.map((el) => (
           <VodTile

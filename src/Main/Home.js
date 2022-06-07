@@ -10,6 +10,7 @@ export const HomeWrapper = styled.div`
   width: 100%;
   h4 {
     text-align: center;
+    z-index: 10;
     @media (min-width: 768px) {
       margin-bottom: 25px;
     }

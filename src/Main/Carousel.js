@@ -110,7 +110,7 @@ export const Carousel = (props) => {
     {
       name: "Vod",
       redirect: "/vod",
-      image: "/images/select_tag.png",
+      image: "/images/vod.png",
     },
   ];
 
