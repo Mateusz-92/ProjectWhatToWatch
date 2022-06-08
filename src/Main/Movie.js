@@ -32,7 +32,6 @@ export const Movie = () => {
           country={movie.country}
           description={movie.description}
           vod={movie.vod}
-          // vod={movie.vod}
         />
         <Tmp id={id} />
       </MovieDetailWrapper>

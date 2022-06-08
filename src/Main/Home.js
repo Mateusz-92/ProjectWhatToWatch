@@ -8,13 +8,7 @@ export const HomeWrapper = styled.div`
   color: #3e3134;
   box-sizing: border-box;
   width: 100%;
-  h4 {
-    text-align: center;
-    z-index: 10;
-    @media (min-width: 768px) {
-      margin-bottom: 25px;
-    }
-  }
+
   h2 {
     text-align: center;
     margin-left: 2.5%;
