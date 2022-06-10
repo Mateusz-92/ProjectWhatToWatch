@@ -14,6 +14,14 @@ const Wrapper = styled.div`
       text-align: center;
     }
   }
+  .watch_on {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+    @media (min-width: 768px) {
+      text-align: center;
+    }
+  }
 `;
 const ImageWrapper = styled.div`
   margin-bottom: 2.5%;
@@ -63,6 +71,26 @@ const Header = styled.div`
     font-weight: 1000;
   }
 `;
+const VodWrapper = styled.div`
+  display: flex;
+  margin-top: 5px;
+  max-width: 100%;
+  flex-wrap: wrap;
+  @media (min-width: 768px) {
+    justify-content: center;
+  }
+  .vod {
+    padding: 2px;
+    padding-top: 1px;
+  }
+  img {
+    max-width: 100%;
+    @media (max-width: 768px) {
+      width: 71px;
+      height: 37px;
+    }
+  }
+`;
 
 export const MovieDetailsWrapper = ({
   thumbnail,
@@ -71,6 +99,7 @@ export const MovieDetailsWrapper = ({
   genres,
   country,
   description,
+  vod,
 }) => {
   return (
     <Wrapper>
@@ -95,6 +124,18 @@ export const MovieDetailsWrapper = ({
           <span>{country}</span>
         </Genres>
       </div>
+      {vod?.length > 0 && (
+        <>
+          <span className="watch_on">Obejrzysz na:</span>
+          <VodWrapper>
+            {vod.map((item) => (
+              <div className="vod" key={item}>
+                <img src={`/images/vod/${item}.png `} alt="vod" />
+              </div>
+            ))}
+          </VodWrapper>
+        </>
+      )}
       <Description>
         <span>{description}</span>
       </Description>

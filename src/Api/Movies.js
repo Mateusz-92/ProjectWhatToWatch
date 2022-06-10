@@ -43,3 +43,6 @@ export const getGenres = () => {
 export const getLists = () => {
   return api.get("lists");
 };
+export const getVodMovie = (service) => {
+  return api.get(`/vod/${service}`);
+};

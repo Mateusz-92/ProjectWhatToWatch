@@ -4,7 +4,6 @@ import { getMovieById } from "../Api/Movies";
 import { MovieDetailWrapper } from "./InterestingMoviesFacts";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { LogoComponent } from "./LogoComponent";
 import { Tmp } from "./tmp";
 import { MovieDetailsWrapper } from "./MovieDetailsWrapper";
 
@@ -12,6 +11,8 @@ export const Movie = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+
+  // const tmpArray = ["netflix", "player", "amazon", "ninateka", "wtf"];
 
   useEffect(() => {
     getMovieById(id).then((data) => {
@@ -30,6 +31,7 @@ export const Movie = () => {
           genres={[`${movie.genres}`]}
           country={movie.country}
           description={movie.description}
+          vod={movie.vod}
         />
         <Tmp id={id} />
       </MovieDetailWrapper>

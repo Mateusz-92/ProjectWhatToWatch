@@ -24,6 +24,7 @@ const ButtonLeft = styled.button`
   left: 10px;
   background-color: #ffd756;
   border-left: #ffd756;
+  cursor: pointer;
 `;
 const ButtonRight = styled.button`
   width: 0;
@@ -40,6 +41,7 @@ const ButtonRight = styled.button`
   background-color: #ffd756;
   border-right: #ffd756;
   z-index: 3;
+  cursor: pointer;
 `;
 const ActuallType = styled.div`
   width: 70%;
@@ -81,7 +83,7 @@ export const Carousel = (props) => {
   const items = [
     {
       name: "Ranking",
-      redirect: "/trial2",
+      redirect: "/rank",
       image: "/images/rank.png",
     },
     {
@@ -97,13 +99,18 @@ export const Carousel = (props) => {
 
     {
       name: "Gatunek",
-      redirect: "/trial",
+      redirect: "/genres",
       image: "/images/genre.png",
     },
     {
       name: "Losowy",
       redirect: "/random",
       image: "/images/select_tag.png",
+    },
+    {
+      name: "Vod",
+      redirect: "/vod",
+      image: "/images/vod.png",
     },
   ];
 

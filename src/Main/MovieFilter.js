@@ -47,6 +47,7 @@ const Filter = styled.div`
   font-weight: bold;
   margin-top: 0.5rem;
   z-index: 2;
+  cursor: pointer;
 `;
 
 export const MoviesWrapper = styled.div`

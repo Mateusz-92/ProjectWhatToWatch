@@ -35,7 +35,11 @@ export const Recommended = () => {
       <Header>
         <h1>Polecamy do oglądania</h1>
         <div>
-          <img className="star_image" src="/images/recommended2.png"></img>
+          <img
+            className="star_image"
+            src="/images/recommended2.png"
+            alt="star"
+          ></img>
         </div>
       </Header>
       <MoviesWrapper>

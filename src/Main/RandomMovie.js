@@ -8,6 +8,10 @@ import styled from "styled-components";
 const Btn = styled(BtnWrapper)`
   width: 95%;
   margin: 0 auto;
+  @media (min-width: 768px) {
+    width: 50%;
+    margin: 0 auto;
+  }
 `;
 
 export const RandomMovie = () => {
@@ -32,6 +36,7 @@ export const RandomMovie = () => {
         genres={[`${movie.genres}`]}
         country={movie.country}
         description={movie.description}
+        vod={movie.vod}
       />
       <Btn>
         <button onClick={RandomHandler} className="btn">

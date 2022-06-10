@@ -18,13 +18,13 @@ const Wrapper = styled.div`
     height: 75%;
     max-height: 283.16px;
     @media (min-width: 768px) {
-      height: 100%;
       max-height: 400px;
     }
   }
   .thumbnail {
     width: 100%;
     height: 100%;
+    object-fit: cover;
     border-radius: 8px;
   }
   .title {
