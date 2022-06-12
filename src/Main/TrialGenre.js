@@ -80,9 +80,10 @@ export const Genres = ({
   const [genres, SetGenre] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
   const toggling = () => setIsOpen(!isOpen);
 
-  const fetchByDecade = (e) => {
+  const fetchByOption = (e) => {
     setSelectedOption(e);
     setIsOpen(false);
 
@@ -92,9 +93,12 @@ export const Genres = ({
   };
 
   useEffect(() => {
-    getFetch().then((data) => SetGenre(data));
+    getFetch().then((data) => {
+      setIsLoading(false);
+      SetGenre(data);
+    });
   }, []);
-
+  if (isLoading) return <div>...Loading</div>;
   return (
     <HomeWrapper>
       <MovieFilterHeader>
@@ -112,7 +116,7 @@ export const Genres = ({
               <DropDownList>
                 {genres?.map((el) => (
                   <ListItem
-                    onClick={() => fetchByDecade(el.listName)}
+                    onClick={() => fetchByOption(el.listName)}
                     key={el.listName}
                   >
                     {el.listName}

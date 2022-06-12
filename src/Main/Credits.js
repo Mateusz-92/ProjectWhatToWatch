@@ -77,6 +77,11 @@ export const Credits = () => {
       name: "Marcin Żabicki",
       contact: "github.com/marcinzabicki",
     },
+    {
+      type: "Kontakt",
+      name: "",
+      contact: "cobytuobejrzec.app@gmail.com",
+    },
   ];
   const [index, SetIndex] = useState(0);
   const timeoutRef = useRef(null);
