@@ -63,6 +63,7 @@ const ListItem = styled("li")`
 `;
 const ListDescription = styled.div`
   width: 90%;
+  font-weight: bold;
   margin: 0 auto;
   margin-top: 20px;
   margin-bottom: 40px;
