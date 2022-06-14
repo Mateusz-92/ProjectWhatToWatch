@@ -7,7 +7,6 @@ export const TrialGenre = () => {
   return (
     <Genres
       getFetch={getGenres}
-      // dataList={dataList}
       handler={getMovieByTag}
       movieFilterHeader={"Gatunek"}
       backImage={"/images/genre2.png"}

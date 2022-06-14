@@ -89,7 +89,7 @@ export const Home = (props) => {
       <div>
         <h2>
           Lubisz stare filmy? <br />
-          Podpowiemy Ci który obejrzeć{" "}
+          Podpowiemy Ci który obejrzeć!
         </h2>
       </div>
       <Link to="/start">

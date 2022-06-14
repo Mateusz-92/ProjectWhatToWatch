@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { MovieFilterHeader } from "./MovieFilter";
 import { MoviesWrapper } from "./MovieFilter";
+import BouncingDotsLoader from "./BouncingDotsLoader ";
 
 const DropDownContainer = styled("div")`
   width: 90%;
@@ -99,7 +100,7 @@ export const Genres = ({
       SetGenre(data);
     });
   }, []);
-  if (isLoading) return <div>...Loading</div>;
+  if (isLoading) return <BouncingDotsLoader />;
   return (
     <HomeWrapper>
       <MovieFilterHeader>

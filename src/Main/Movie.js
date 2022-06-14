@@ -6,13 +6,12 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Tmp } from "./tmp";
 import { MovieDetailsWrapper } from "./MovieDetailsWrapper";
+import { BouncingDotsLoader } from "./BouncingDotsLoader ";
 
 export const Movie = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-
-  // const tmpArray = ["netflix", "player", "amazon", "ninateka", "wtf"];
 
   useEffect(() => {
     getMovieById(id).then((data) => {
@@ -20,7 +19,7 @@ export const Movie = () => {
       setMovie(data);
     });
   }, []);
-  if (isLoading) return <div>loading...</div>;
+  if (isLoading) return <BouncingDotsLoader />;
   return (
     <HomeWrapper>
       <MovieDetailWrapper>
