@@ -3,6 +3,7 @@ import { MovieDetailsWrapper } from "./MovieDetailsWrapper";
 import { fetchRandomMovie } from "../Api/Movies";
 import { HomeWrapper } from "./Home";
 import { BtnWrapper } from "./InterestingMoviesFacts";
+import BouncingDotsLoader from "./BouncingDotsLoader ";
 import styled from "styled-components";
 
 const Btn = styled(BtnWrapper)`
@@ -26,7 +27,7 @@ export const RandomMovie = () => {
   useEffect(() => {
     RandomHandler();
   }, []);
-  if (isLoading) return <h1>...loading</h1>;
+  if (isLoading) return <BouncingDotsLoader />;
   return (
     <HomeWrapper>
       <MovieDetailsWrapper

@@ -4,6 +4,7 @@ import { CoverWrapper } from "./CoverWrapper";
 import { getMovieByTag } from "../Api/Movies";
 import { HomeWrapper } from "./Home";
 import { MoviesWrapper } from "./MovieFilter";
+import BouncingDotsLoader from "./BouncingDotsLoader ";
 import styled from "styled-components";
 
 const Header = styled.div`
@@ -27,9 +28,14 @@ const Header = styled.div`
 
 export const Recommended = () => {
   const [movies, SetMovie] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
-    getMovieByTag("fav").then((data) => SetMovie(data));
+    getMovieByTag("fav").then((data) => {
+      setIsLoading(false);
+      SetMovie(data);
+    });
   }, []);
+  if (isLoading) return <BouncingDotsLoader />;
   return (
     <HomeWrapper>
       <Header>
