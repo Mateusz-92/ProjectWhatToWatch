@@ -23,6 +23,10 @@ const CreditsWrapper = styled.div`
     width: 700px;
     height: 400px;
   }
+  @media (orientation: landscape) {
+    width: 80%;
+    height: 50%;
+  }
   h2 {
     position: absolute;
     top: 5px;

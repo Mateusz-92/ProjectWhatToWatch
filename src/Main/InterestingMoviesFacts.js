@@ -7,6 +7,7 @@ import styled from "styled-components";
 import { MovieTile } from "./MovieTile";
 import { Wrapper } from "./tmp";
 import { Header } from "./tmp";
+import BouncingDotsLoader from "./BouncingDotsLoader ";
 
 export const MovieDetailWrapper = styled.div`
   width: 90%;
@@ -46,7 +47,7 @@ export const InterestingMoviesFacts = () => {
   useEffect(() => {
     fetchHandler();
   }, []);
-  if (isLoading) return <div>loading...</div>;
+  if (isLoading) return <BouncingDotsLoader />;
   let cover = `https://wtwapi.azurewebsites.net${fact.image}`;
   return (
     <>

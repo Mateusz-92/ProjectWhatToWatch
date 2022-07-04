@@ -8,13 +8,17 @@ const QuestionMark = styled.div`
   top: 3rem;
   right: 20px;
   z-index: 1;
-  @media (min-width: 400px) {
-    max-width: 100%;
+  @media (orientation: landscape) {
+    max-width: 20%;
     left: 60%;
+    top: -10%;
   }
 
   img {
     height: 200px;
+    @media (orientation: landscape) {
+      height: 165px;
+    }
   }
 `;
 
